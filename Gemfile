@@ -40,4 +40,5 @@ group :test, :development do
   gem "rspec", "~> 2.8.0"
   gem "rspec-rails", "~> 2.8.1"
   gem "magic_encoding", "~> 0.0.2"
+  gem 'factory_girl_rails'
 end

@@ -1,6 +1,6 @@
 EducationWebsite::Application.routes.draw do
   get "pages/index"
-
+  match '/about' => 'pages#about', :as => :about
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

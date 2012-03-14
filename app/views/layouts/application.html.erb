@@ -11,7 +11,7 @@
 <div id="page">
 <div id="top">
 <div id="logo"><%= link_to image_tag('logo.png'), root_path  %></div>
-<div id="company_name">Education Center</div>
+<div id="company_name">Сайт для абитуриентов</div>
 <div id="search-box"><table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td><input type="text" class="search-area"></td>
@@ -26,17 +26,17 @@
   <table border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td width="11"><img src="/assets/ml.png" width="11" height="33" alt=""></td>
-      <td class="item"><a href="#">Home</a></td>
+      <td class="item"><%= link_to 'Главная', root_path %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
-      <td class="item"><a href="#">About Us</a></td>
+      <td class="item"><%= link_to 'О нас', about_path %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
-      <td class="item"><a href="#">Glossary</a></td>
+      <td class="item"><%= link_to 'Glossary', "#" %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
-      <td class="item"><a href="#">Our Clients</a></td>
+      <td class="item"><%= link_to 'Our Clients', "#" %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
-      <td class="item"><a href="#">Testimonials</a></td>
+      <td class="item"><%= link_to 'Testimonials', "#"  %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
-      <td class="item"><a href="#">Contact Details</a></td>
+      <td class="item"><%= link_to 'Contact Details', "#" %></td>
       <td width="11"><img src="/assets/mr.png" width="11" height="33" alt=""></td>
     </tr>
   </table>
@@ -49,15 +49,11 @@
 <div id="contentwrap">
 <div id="body_area">
   <h1>Welcome to Education website!</h1>
-  <p><a href="http://www.jdoqocy.com/14100zw41w3JNNPMKTLJLKOORKQM" target="_blank" onMouseOver="window.status='http://www.dreamtemplate.com';return true;" onMouseOut="window.status=' ';return true;">
-<img src="http://www.tqlkg.com/pm118z15u-yJNNPMKTLJLKOORKQM" alt="DreamTemplate - Web Templates" border="0"/></a></p>
   <p>Education is the process by which an individual is encouraged and enabled to fully develop his or her potential; it may also serve the purpose of equipping the individual with what is necessary to be a productive member of society. Through teaching and learning the individual acquires and develops knowledge and skills.</p>
   <p>The term education is often used to refer to formal education (see below). However, the word's broader meaning covers a range of experiences, from formal learning to the building of understanding and knowledge through day to day experiences. Ultimately, all that we experience serves as a form of education.</p>
   <p>It is widely accepted that the process of education is lifelong. Studies have shown that the child already in uetero is educated by the experiences it is exposed to.</p>
   <p><em>From Wikipedia, the free encyclopedia</em></p>
-  <div style="border:#8fc228 solid 1px;padding:4px 6px 2px 6px">Этот бесплатный шаблон был закачан с <a href="http://ru.anvisionwebtemplates.com">AnVisionWebTemplates.com</a>.<br>
-  Посетите нас по адресу <a href="http://ru.anvisionwebtemplates.com">ru.anvisionwebtemplates.com</a> для того, чтобы увидеть полную коллекцию наших шаблонов.
-  </div>
+  
 </div>
 <div id="sidebar">
 <div class="banner"><img src="/assets/banner1.jpg" width="240" height="122" alt=""></div>
@@ -65,7 +61,7 @@
 </div></div></div></div>
 <div id="footer">
 	<div id="bottom_menu"><a href="#">Home Page</a> |  <a href="#">About Us</a> |  <a href="#">Our Clients</a> |  <a href="#">Testimonials</a> |  <a href="#">Price List</a> |  <a href="#">Contact Details</a></div>
-	<div id="bottom_addr">© 2010 Company Name. All Rights Reserved</div>
+	<div id="bottom_addr">© 2012 Company Name. All Rights Reserved</div>
 </div>
 <%= yield %>
 

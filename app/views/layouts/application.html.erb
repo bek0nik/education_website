@@ -30,7 +30,7 @@
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
       <td class="item"><%= link_to 'О нас', about_path %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
-      <td class="item"><%= link_to 'Glossary', "#" %></td>
+      <td class="item"><%= link_to 'Тестирование', test_names_path %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
       <td class="item"><%= link_to 'Our Clients', "#" %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
@@ -53,17 +53,19 @@
   <p>The term education is often used to refer to formal education (see below). However, the word's broader meaning covers a range of experiences, from formal learning to the building of understanding and knowledge through day to day experiences. Ultimately, all that we experience serves as a form of education.</p>
   <p>It is widely accepted that the process of education is lifelong. Studies have shown that the child already in uetero is educated by the experiences it is exposed to.</p>
   <p><em>From Wikipedia, the free encyclopedia</em></p>
-  
+ <%= yield %> 
 </div>
 <div id="sidebar">
 <div class="banner"><img src="/assets/banner1.jpg" width="240" height="122" alt=""></div>
 <div class="banner"><img src="/assets/banner2.jpg" width="240" height="122" alt=""></div>
 </div></div></div></div>
+
+
 <div id="footer">
 	<div id="bottom_menu"><a href="#">Home Page</a> |  <a href="#">About Us</a> |  <a href="#">Our Clients</a> |  <a href="#">Testimonials</a> |  <a href="#">Price List</a> |  <a href="#">Contact Details</a></div>
 	<div id="bottom_addr">© 2012 Company Name. All Rights Reserved</div>
 </div>
-<%= yield %>
+
 
 </body>
 </html>

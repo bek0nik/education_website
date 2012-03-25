@@ -1,0 +1,11 @@
+<%= form_for @test do |f| %>
+  
+  <%= f.label :title, "Название" %>
+  <%= f.text_field :title %>
+  
+  <%= f.label :description, "Описание" %>
+  <%= f.text_area :description %>
+    
+  <%= f.submit "Сохранить" %>
+  
+<% end %>

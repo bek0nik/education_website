@@ -1,4 +1,7 @@
 EducationWebsite::Application.routes.draw do
+
+  resources :test_names
+
   get "pages/index"
   match '/about' => 'pages#about', :as => :about
   # The priority is based upon order of creation:

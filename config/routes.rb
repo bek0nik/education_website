@@ -1,9 +1,19 @@
 EducationWebsite::Application.routes.draw do
 
-  resources :test_names
+  resources :questions
+
+  resources :test_names do
+    get "tester", :on => :member, :as => :tester
+  end
 
   get "pages/index"
   match '/about' => 'pages#about', :as => :about
+  
+  match "admin" => "admin#index", :as => :admin
+  namespace :admin do
+    resources :questions
+    resources :test_names  
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

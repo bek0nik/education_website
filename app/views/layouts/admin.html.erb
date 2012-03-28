@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EducationWebsite</title>
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to 'Админка', admin_path, :class => 'brand'  %>
+      <div class="nav-collapse in">
+        <ul class="nav">
+          <li><%= link_to 'Главная', admin_path  %></li>
+          <li><%= link_to 'Тесты', admin_test_names_path  %></li>
+          <li><%= link_to 'Вопросы', admin_questions_path  %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+  <%= yield %>
+  </div>
+</div>
+</body>
+</html>

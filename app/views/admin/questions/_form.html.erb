@@ -1,0 +1,45 @@
+<%= form_for([:admin, @question]) do |f| %>
+  <fieldset>
+  
+  <legend>Создание вопроса</legend>
+  
+  <div class="control-group">
+    <%= f.label :test_name_id, "Категория" %>
+    <div class="controls">
+    <%= f.collection_select :test_name_id, TestName.all, :id, :title %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :title, "Текст вопроса" %>
+    <div class="controls">
+      <%= f.text_area :title, rows: 2 %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :variant_1, "Вариант 1" %>
+    <div class="controls">
+      <%= f.text_field :variant_1 %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :variant_2, "Вариант 2" %>
+    <div class="controls">
+      <%= f.text_field :variant_2 %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :correct, "Правильный вариант" %>
+    <div class="controls">
+      <%= f.text_field :correct %>
+    </div>
+  </div>  
+  <div class="form-actions"> 
+    <%= f.submit "Добавить", :class => 'btn' %>
+  </div>
+  </fieldset>
+  
+<% end %>

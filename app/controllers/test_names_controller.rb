@@ -6,12 +6,13 @@ class TestNamesController < ApplicationController
     @tests = TestName.all
   end
   
-  def tester
-        
+  def start            
+    @test = TestName.find(params[:id])
+    @question = @test.questions.all  
   end
   
   def show
-    
+      
   end
   
   

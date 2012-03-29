@@ -1,0 +1,11 @@
+<% @question.each do |q| %>
+<%= form_tag(start_test_names_path, :method => 'get')   do %>
+  <%= label_tag :testname, "" %>
+  <%= q.title %> <br />
+  <%= radio_button_tag :A, q.correct %> <%= q.correct %>
+  <%= radio_button_tag :B, q.variant_1 %> <%= q.variant_1 %>
+  <%= radio_button_tag :C, q.variant_2 %> <%= q.variant_2 %>   
+<% end %>
+
+
+<% end %>

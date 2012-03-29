@@ -3,7 +3,7 @@ EducationWebsite::Application.routes.draw do
   resources :questions
 
   resources :test_names do
-    get "tester", :on => :member, :as => :tester
+    get "start", :on => :member, :as => :start
   end
 
   get "pages/index"

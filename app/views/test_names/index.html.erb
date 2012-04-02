@@ -1,0 +1,7 @@
+<% @tests.each do |t| %>
+  <%= t.title %>
+  <%= link_to 'show', test_name_path(t)  %>
+  <%= link_to 'Начать тестирование', start_test_name_path(t) %>
+   <br/>
+<% end %>
+

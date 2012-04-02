@@ -1,0 +1,13 @@
+
+<%= form_tag(start_test_names_path, :method => 'get')   do %>
+  <%= label_tag :testname, "" %>
+  <% @question.each do |q| %>
+    <%= q.title %> <br />
+  
+    <%= radio_button_tag :A, "a" %>a) <%= q.correct %> <br />
+    <%= radio_button_tag :A, "b" %>b) <%= q.variant_1 %> <br />
+    <%= radio_button_tag :A, "c" %>c) <%= q.variant_2 %> <br />  
+  <% end %>
+  <%= submit_tag "Закончить" %>
+
+<% end %>

@@ -1,0 +1,18 @@
+<%= form_for([:admin, @test]) do |f| %>
+  <fieldset>
+  <div class="control-group">
+    <%= f.label :title, "Название" %>
+    <div class="controls">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, "Описание" %>
+    <div class="controls">
+      <%= f.text_area :description, :rows => 4 %>
+    </div>
+  </div>
+    
+  <%= f.submit "Сохранить", :class => 'btn' %>
+  </fieldset>
+<% end %>

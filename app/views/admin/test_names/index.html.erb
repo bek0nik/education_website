@@ -1,0 +1,5 @@
+<% @tests.each do |t| %>
+  <%= t.title %> 
+  <%= t.questions %><br />
+<% end %>
+<%= link_to 'Добавить тест', new_admin_test_name_path %>

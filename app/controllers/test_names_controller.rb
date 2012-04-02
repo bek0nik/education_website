@@ -8,7 +8,8 @@ class TestNamesController < ApplicationController
   
   def start            
     @test = TestName.find(params[:id])
-    @question = @test.questions.all  
+    @question = @test.questions.all
+      
   end
   
   def show

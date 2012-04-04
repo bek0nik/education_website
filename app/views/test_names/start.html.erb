@@ -1,13 +1,9 @@
-
-<%= form_tag(start_test_names_path, :method => 'get')   do %>
-  <%= label_tag :testname, "" %>
-  <% @question.each do |q| %>
-    <%= q.title %> <br />
+<b><%= label_tag :testname, @test.title %></b>
+<%= form_tag(start_test_name_path, :method => 'get')   do |f| %>
   
-    <%= radio_button_tag :A, "a" %>a) <%= q.correct %> <br />
-    <%= radio_button_tag :A, "b" %>b) <%= q.variant_1 %> <br />
-    <%= radio_button_tag :A, "c" %>c) <%= q.variant_2 %> <br />  
-  <% end %>
-  <%= submit_tag "Закончить" %>
-
+  
+  <%= render "#{@test.current_step}_step", :f => f %>
+  
+  <%= submit_tag "Back", :name => "back_button" unless @test.first_step? %>
+  <%= submit_tag "Next" %>
 <% end %>

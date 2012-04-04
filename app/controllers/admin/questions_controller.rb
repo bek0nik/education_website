@@ -2,8 +2,9 @@ class Admin::QuestionsController < ApplicationController
   respond_to :html
   layout 'admin'
   
-  def index
-    
+  def show
+    @test = Testname.find(params[:id])
+    @question = @test.question.all    
   end
   
   def index
@@ -34,7 +35,7 @@ class Admin::QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     if @question.update_attributes(params[:question])
       flash[:notice] = "Successfully"
-      respond_with @question
+      respond_with(@question, :location => admin_questions_path)
     else
       render "edit"
     end    

@@ -1,0 +1,15 @@
+  3.<%= @question[3].title %> <br />
+  <div class="controls">
+    <label class="radio"><%= radio_button_tag :c, @question[3].variant_1 %>
+      <%= label_tag :c, @question[3].variant_1 %>
+    </label>
+    
+    <label class="radio"><%= radio_button_tag :c, @question[3].variant_2 %>
+      <%= label_tag :c, @question[3].variant_2 %>
+    </label>
+  
+    <label class="radio">
+      <%= radio_button_tag :c, @question[3].correct %>
+      <%= label_tag :c, @question[3].correct %>
+    </label>
+  </div>

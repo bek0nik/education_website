@@ -1,5 +1,8 @@
 EducationWebsite::Application.routes.draw do
 
+  resources :users
+  resources :sessions
+
   resources :questions
 
   resources :test_names do

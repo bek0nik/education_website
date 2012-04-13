@@ -1,5 +1,12 @@
 EducationWebsite::Application.routes.draw do
 
+  resources :users
+  resource :sessions
+  
+  get "signup" => 'users#new', :as => :signup
+  get "login" => 'sessions#new', :as => :login
+  get "logout" => 'sessions#destroy', :as => :logout
+
   resources :questions
 
   resources :test_names do

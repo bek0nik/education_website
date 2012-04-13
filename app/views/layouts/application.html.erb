@@ -8,17 +8,39 @@
 </head>
 <body>
 <div id="wrap">
+  
+    <% if current_user %>
+      <div id="current_user">
+      <%= current_user.email %>
+      <%= link_to 'Выйти', logout_path %>
+      </div>
+    <% else %>
+    <div id="topnav">Уже?<span><%= link_to 'Вход', login_path, :class => "login" %></span></div>       
+      <fieldset id="login_menu">
+        <%= form_tag(sessions_path, :id => "login") do %>
+          <%= label_tag :email, "Email" %>
+          <%= email_field_tag :email %>
+  
+          <%= label_tag :password, "пароль" %>
+          <%= password_field_tag :password %>
+  
+          <%= submit_tag "Вход", :id => "login_submit" %>
+        <% end %>
+      </fieldset>
+    <% end %>
   <div id="page">
   <!--top-->
   <div id="top">
     <div id="logo"><%= link_to image_tag('logo.png'), root_path  %></div>
     <div id="company_name">Сайт для абитуриентов</div>
-    <div id="search-box"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td><input type="text" class="search-area"></td>
-        <td width="10"><img src="/assets/spacer.gif" width="10" height="1" alt=""></td>
-        <td width="72"><a href="#"><img src="/assets/btn_search.png" width="72" height="29" alt=""></a></td>
-      </tr>
+
+    <div id="search-box">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><input type="text" class="search-area"></td>
+          <td width="10"><img src="/assets/spacer.gif" width="10" height="1" alt=""></td>
+          <td width="72"><a href="#"><img src="/assets/btn_search.png" width="72" height="29" alt=""></a></td>
+        </tr>
       </table>
     </div>
 
@@ -34,7 +56,7 @@
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
       <td class="item"><%= link_to 'Тестирование', test_names_path %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
-      <td class="item"><%= link_to 'ссылка4', "#" %></td>
+      <td class="item"><%= link_to 'ссылка4', new_user_path %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
       <td class="item"><%= link_to 'ссылка5', "#"  %></td>
       <td width="42"><img src="/assets/ms.png" width="42" height="33" alt=""></td>
@@ -58,11 +80,11 @@
 </div>
 
 
-<div id="footer">
+<!--<div id="footer">
 	<div id="bottom_menu"><a href="#">Главная</a> |  <a href="#">О нас</a> |  <a href="#">Тестирование</a> |  <a href="#">ссылка4</a> |  <a href="#">ссылка5</a> |  <a href="#">ссылка6</a></div>
 	<div id="bottom_addr">© 2012. All Rights Reserved</div>
 </div>
-
+-->
 
 </body>
 </html>

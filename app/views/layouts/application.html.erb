@@ -15,7 +15,7 @@
       <%= link_to 'Выйти', logout_path %>
       </div>
     <% else %>
-    <div id="topnav">Уже?<span><%= link_to 'Вход', login_path, :class => "login" %></span></div>       
+    <div id="topnav"><span><%= link_to 'Регистрация', signup_path, :class => "signup" %></span><span><%= link_to 'Вход', login_path, :class => "login" %></span></div>       
       <fieldset id="login_menu">
         <%= form_tag(sessions_path, :id => "login") do %>
           <%= label_tag :email, "Email" %>

@@ -10,8 +10,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Регистрация завершена"
-      respond_with root_url
+      respond_with root_path
     else
+      flash[:notice] = "error"
       render 'new'      
     end    
   end

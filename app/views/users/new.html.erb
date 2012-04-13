@@ -1,4 +1,7 @@
-<% form_for @user do |f| %>
+<% flash.each do |name, msg| %>
+  <%= msg %>
+<% end %>
+<%= form_for @user do |f| %>
   <%= f.label :email %>
   <%= f.email_field :email %>
   

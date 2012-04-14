@@ -81,11 +81,11 @@ a.login.menu-open span {
       font-weight:normal;
     }
 }
-#login_menu input[type=text], #login_menu input[type=password] {
+#login_menu input[type=email], #login_menu input[type=password] {
     display:block;
     -moz-border-radius:4px;
     -webkit-border-radius:4px;
-    border:1px solid #f5f369;
+    border:1px solid #f8e73f;
     font-size:13px;
     margin:0 0 5px;
     padding:5px;
@@ -104,7 +104,7 @@ a.login.menu-open span {
     -webkit-border-radius:4px;
     background:#fb9a0e;
     border:1px solid #cca97c;
-    color:#fff;
+    color:#eeeedc;
     text-shadow:0 -1px 0 #39d;
     padding:4px 10px 5px;
     font-size:11px;
@@ -127,7 +127,7 @@ border:0;
 
 //registration
   a.signup{
-    background:#f08f22;
+    background:#fba545;
     padding:4px 6px 6px;
     text-decoration:none;
     font-weight:bold;
@@ -139,4 +139,9 @@ border:0;
     *padding:4px 12px 6px;
     position:relative;
     margin-left:3px;  
+  }
+  a.signup hover {
+    background:#f06a1a;
+    *background:transparent url("signin-nav-bg-hover-ie.png") no-repeat 0 0;
+    *padding:4px 12px 6px;
   }

@@ -14,3 +14,25 @@ $(document).ready(function() {
     }
   });
 });
+
+//validates login
+$(document).ready(function(){
+  $('#login').validate({
+    rules: {
+      'email': {
+        required: true,
+        email: true,
+      },
+      'password': {
+        required: true
+      },
+    },
+    messages:{
+      'email': {
+        required: 'Введите email',
+        email: 'Введите корректный email',
+      },
+      'password': 'Введите пароль',
+    }
+  })
+});

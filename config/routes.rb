@@ -1,5 +1,7 @@
 EducationWebsite::Application.routes.draw do
 
+  resources :universities
+
   resources :users
   resource :sessions
   

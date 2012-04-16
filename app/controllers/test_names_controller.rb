@@ -1,6 +1,7 @@
 #encoding:UTF-8
 class TestNamesController < ApplicationController
   respond_to :html
+  layout 'testing'
    
   def index
     @tests = TestName.all

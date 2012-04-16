@@ -22,9 +22,13 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem "kaminari", "~> 0.13.0"
 
+# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem "omniauth-facebook"
+gem "heroku", "~> 2.24.1"
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
@@ -40,4 +44,5 @@ group :test, :development do
   gem "rspec", "~> 2.8.0"
   gem "rspec-rails", "~> 2.8.1"
   gem "magic_encoding", "~> 0.0.2"
+  gem 'factory_girl_rails'
 end

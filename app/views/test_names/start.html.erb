@@ -1,0 +1,23 @@
+
+<%= form_tag(start_test_name_path, :method => 'get')   do |f| %>
+      
+      <% @question.each do |item|  %>  
+        <%= item.title %>
+        <div class="controls">
+        <label class="radio">
+        <%= radio_button_tag item.id, item.correct, params[:checked] %>
+        <%= label_tag item.id, item.correct %>
+        </label>
+        <label class="radio">
+        <%= radio_button_tag item.id, item.variant_1, params[:checked] %>
+        <%= label_tag item.id, item.variant_1 %>
+        </label>
+          <label class="radio">
+        <%= radio_button_tag item.id, item.variant_2, params[:checked] %>
+        <%= label_tag item.id, item.variant_2 %>
+        </label>
+        <%= paginate @question %>        
+      <% end %>
+      <%= submit_tag "Закончить" %>    
+<% end %>
+

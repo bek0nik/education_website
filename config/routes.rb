@@ -1,4 +1,30 @@
 EducationWebsite::Application.routes.draw do
+
+  resources :authentications
+  match '/auth/:provider/callback' => 'authentications#create' 
+  resources :universities
+
+  resources :users
+  resource :sessions
+  
+  get "signup" => 'users#new', :as => :signup
+  get "login" => 'sessions#new', :as => :login
+  get "logout" => 'sessions#destroy', :as => :logout
+
+  resources :questions
+
+  resources :test_names do
+    get "start", :on => :member, :as => :start
+  end
+
+  get "pages/index"
+  match '/about' => 'pages#about', :as => :about
+  
+  match "admin" => "admin#index", :as => :admin
+  namespace :admin do
+    resources :questions
+    resources :test_names  
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,7 +75,7 @@ EducationWebsite::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-
+  root :to => 'pages#index'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

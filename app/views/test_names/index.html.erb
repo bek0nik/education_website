@@ -1,0 +1,6 @@
+<% @tests.each do |t| %>
+  <%= t.title %>
+  <%= link_to 'show', test_name_path(t)  %>
+   <br/>
+<% end %>
+

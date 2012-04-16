@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EducationWebsite</title>
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  <%= javascript_include_tag "testing" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to 'Выход', root_path %>
+<%= yield %>
+</body>
+</html>

@@ -15,7 +15,15 @@
     -moz-border-radius:4px;
     border-radius:4px;
     *background:transparent url('signin-nav-bg-ie.png') no-repeat 0 0;
-    *padding:4px 12px 6px;  
+    *padding:4px 12px 6px;
+    position:relative;
+    margin-left:3px;
+    span {
+      background-image:url("toggle_down_light.png");
+      background-repeat:no-repeat;
+      background-position:100% 50%;
+      padding:4px 16px 6px 0;
+    }  
   }
   a.login hover {
     background:#5599BB;
@@ -26,16 +34,6 @@
     background:#f08f22!important;
     color:#666!important;
     outline:none;
-  }
-  a.login span {
-    background-image:url("toggle_down_light.png");
-    background-repeat:no-repeat;
-    background-position:100% 50%;
-    padding:4px 16px 6px 0;
-  }
-  a.login {
-    position:relative;
-    margin-left:3px;
   }
 #topnav a.login, #topnav a.login:hover {
     *background-position:0 3px!important;
@@ -70,30 +68,30 @@ a.login.menu-open span {
     *margin-right: -1px;
     color:#789;
     font-size:11px;
+    p {
+      margin:0;
+      .remember {
+        padding:10px 0;
+      }
+    } 
+    a {
+      color:#6AC;
+    }
+    label {
+      font-weight:normal;
+    }
 }
- 
-#login_menu input[type=text], #login_menu input[type=password] {
+#login_menu input[type=email], #login_menu input[type=password] {
     display:block;
     -moz-border-radius:4px;
     -webkit-border-radius:4px;
-    border:1px solid #f5f369;
+    border:1px solid #f8e73f;
     font-size:13px;
     margin:0 0 5px;
     padding:5px;
     width:203px;
 }
-#login_menu p {
-    margin:0;
-}
-#login_menu a {
-    color:#6AC;
-}
-#login_menu label {
-    font-weight:normal;
-}
-#login_menu p.remember {
-    padding:10px 0;
-}
+
 #login_menu p.forgot, #login_menu p.complete {
     clear:both;
     margin:5px 0;
@@ -106,7 +104,7 @@ a.login.menu-open span {
     -webkit-border-radius:4px;
     background:#fb9a0e;
     border:1px solid #cca97c;
-    color:#fff;
+    color:#eeeedc;
     text-shadow:0 -1px 0 #39d;
     padding:4px 10px 5px;
     font-size:11px;
@@ -126,3 +124,24 @@ border:0;
   font-size: 11px;
   float:right;
 }
+
+//registration
+  a.signup{
+    background:#fba545;
+    padding:4px 6px 6px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#fff;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    *background:transparent url('signin-nav-bg-ie.png') no-repeat 0 0;
+    *padding:4px 12px 6px;
+    position:relative;
+    margin-left:3px;  
+  }
+  a.signup hover {
+    background:#f06a1a;
+    *background:transparent url("signin-nav-bg-hover-ie.png") no-repeat 0 0;
+    *padding:4px 12px 6px;
+  }

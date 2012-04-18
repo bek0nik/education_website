@@ -23,7 +23,8 @@ EducationWebsite::Application.routes.draw do
   match "admin" => "admin#index", :as => :admin
   namespace :admin do
     resources :questions
-    resources :test_names  
+    resources :test_names
+    resources :universities  
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

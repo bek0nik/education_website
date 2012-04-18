@@ -1,0 +1,5 @@
+<%= link_to 'Добавить ВУЗ', new_admin_university_path, :class => 'btn' %> <br/>
+
+<% @universities.each do |u| %>
+  <%= u.name %>
+<% end %>

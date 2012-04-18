@@ -1,0 +1,22 @@
+<%= form_for [:admin,@university] do |f| %>
+  <fieldset>
+  <legend><%= @university.legend_value %></legend>
+  <div class="control-group">
+    <%= f.label :name, 'Название' %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, "Описание" %>
+    <div class="controls">
+      <%= f.text_area :description, :rows => 12 %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit @university.button_value, :class =>'btn btn-primary' %>
+    <button type='reset' class="btn cancel-form">Отмена</button>
+  </div>
+  
+  </fieldset>
+<% end %>

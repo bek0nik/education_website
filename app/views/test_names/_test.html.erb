@@ -1,0 +1,25 @@
+<% @question.each do |item|  %>  
+        <%= item.title %>
+        <div class="controls">
+        <label class="radio">
+        <%= radio_button_tag item.id, params[:checked] %>
+        <%= label_tag item.id, item.correct %>
+        </label>
+        <label class="radio">
+        <%= radio_button_tag item.id, params[:checked] %>
+        <%= label_tag item.id, item.variant_1 %>
+        </label>
+          <label class="radio">
+        <%= radio_button_tag item.id, params[:checked] %>
+        <%= label_tag item.id, item.variant_2 %>
+        </label>
+        <label class="radio">
+        <%= radio_button_tag item.id, params[:checked] %>
+        <%= label_tag item.id, item.variant_3 %>
+        </label>
+        <label class="radio">
+        <%= radio_button_tag item.id, params[:checked] %>
+        <%= label_tag item.id, item.variant_4 %>
+        </label>          
+      <% end %>
+      <div class="pagination" id="paginator"><%= paginate @question, :right => 3, :left => 1 %></div>

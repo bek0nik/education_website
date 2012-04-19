@@ -1,5 +1,7 @@
 EducationWebsite::Application.routes.draw do
 
+  resources :specialities
+
   resources :authentications
   match '/auth/:provider/callback' => 'authentications#create' 
   resources :universities

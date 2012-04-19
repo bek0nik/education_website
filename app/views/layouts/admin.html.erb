@@ -3,7 +3,7 @@
 <head>
   <title>EducationWebsite</title>
   <%= stylesheet_link_tag    "admin", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "admin" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,13 +20,20 @@
           <li><%= link_to 'Главная', admin_path  %></li>
           <li><%= link_to 'Тесты', admin_test_names_path  %></li>
           <li><%= link_to 'Вопросы', admin_questions_path  %></li>
+          <li><%= link_to 'ВУЗЫ', admin_universities_path %></li>
+          <li><%= link_to 'Специальности', admin_specialities_path %></li>
         </ul>
       </div>
     </div>
   </div>
   
   <div class="container">
-  <%= yield %>
+    <div class="row">
+      <div class="span12"><%= yield %></div>
+    </div>
+  <div class="row">
+    <div class="span12"><address>Copyright 2012</address></div>
+  </div>
   </div>
 </div>
 </body>

@@ -28,7 +28,8 @@ gem "kaminari", "~> 0.13.0"
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem "omniauth-facebook"
-gem "heroku", "~> 2.24.1"
+gem "omniauth-vkontakte", "~> 1.0.6"
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
@@ -45,4 +46,5 @@ group :test, :development do
   gem "rspec-rails", "~> 2.8.1"
   gem "magic_encoding", "~> 0.0.2"
   gem 'factory_girl_rails'
+  gem "localtunnel", "~> 0.3"
 end

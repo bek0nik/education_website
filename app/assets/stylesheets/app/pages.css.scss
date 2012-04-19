@@ -1,0 +1,90 @@
+//#pageslide { 
+//  width: 60%;
+//  max-width: 842px; 
+//  background: white;
+//  margin: 100px auto;
+//  position: relative;
+//  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+//}
+
+//#pageslide:before, #pageslide:after {
+//  content: "";
+//  position: absolute;
+//  z-index: 1;
+//  top: 0;
+//  bottom: 0;
+//  width: 50px;
+//  background: -webkit-linear-gradient(left, rgba(255,255,255,100), rgba(255,255,255,0));
+//}
+//#pageslide:before {
+//  left: 0;
+//}
+//#pageslide:after {
+//  right: 0;
+//  background: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,100));
+//}
+#slideshow {
+  height: 200px;
+  position:relative;
+  overflow: hidden;
+}
+#slideshow > div {
+  width: 2536px;
+  height: 200px;
+  background: url('collage.jpg');
+  position:absolute;
+  top: 0;
+  left:0;
+  height: 100%;
+  -moz-transition:  opacity 0.5s ease-out; 
+  -o-transition: opacity 0.5s ease-out; 
+  -webkit-transition: opacity 0.5s ease-out; 
+  -ms-transition: opacity 0.5s ease-out; 
+    
+  /* Slow */
+  -webkit-animation: moveSlideshow 60s linear infinite;
+  -moz-animation:    moveSlideshow 60s linear infinite;      
+  -webkit-transform: translate3d(0,0,0); /* Performance */
+}
+#slideshow #slideshow-1 {
+  /* Sprite */
+  background-position: 0 200px;
+  /* Fast */
+  -webkit-animation: moveSlideshow 20s linear infinite;
+  -moz-animation:    moveSlideshow 20s linear infinite;
+}
+#slideshow #slideshow-2 {
+  opacity: 0;
+}
+@-webkit-keyframes moveSlideshow {
+        0%   { 
+            -webkit-transform: translateX(0); 
+            -moz-transform:    translateX(0); 
+            -ms-transform:     translateX(0); 
+            -o-transform:      translateX(0); 
+            transform:         translateX(0); 
+        }    
+        100% { 
+            -webkit-transform: translateX(-1684px); 
+            -moz-transform:    translateX(-1684px); 
+            -ms-transform:     translateX(-1684px); 
+            -o-transform:      translateX(-1684px); 
+            transform:         translateX(-1684px); 
+        }
+    }
+    @-moz-keyframes moveSlideshow {
+        0%   { 
+            -webkit-transform: translateX(0); 
+            -moz-transform:    translateX(0); 
+            -ms-transform:     translateX(0); 
+            -o-transform:      translateX(0); 
+            transform:         translateX(0); 
+        }    
+        100% { 
+            -webkit-transform: translateX(-1684px); 
+            -moz-transform:    translateX(-1684px); 
+            -ms-transform:     translateX(-1684px); 
+            -o-transform:      translateX(-1684px); 
+            transform:         translateX(-1684px); 
+        }
+    }

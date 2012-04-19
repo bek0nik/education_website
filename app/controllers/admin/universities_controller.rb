@@ -27,7 +27,7 @@ class Admin::UniversitiesController < ApplicationController
   
   def update
     @university = University.find(params[:id])
-    if @university.update_attributes
+    if @university.update_attributes(params[:university])
       flash[:notice] = "Successfully"
       respond_with(@university, :location => admin_universities_path)
     else  

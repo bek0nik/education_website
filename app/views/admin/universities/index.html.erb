@@ -1,5 +1,23 @@
 <%= link_to 'Добавить ВУЗ', new_admin_university_path, :class => 'btn' %> <br/>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @universities.each do |u| %>
+    <tr>
+      <td><%= u.name %></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
-<% @universities.each do |u| %>
-  <%= u.name %>
-<% end %>
+
+  
+

@@ -13,8 +13,6 @@ class TestNamesController < ApplicationController
   def start
     @test = TestName.find(params[:id])
     @question = @test.questions.all.sample(30)
-    each { |@question| @question.id }
-    session[:question_id] = @question.id
     session[:test_step].deep_merge!(params[:f]) if params[:f]
     @test.current_step = session[:test_step]
     if params[:back_button]

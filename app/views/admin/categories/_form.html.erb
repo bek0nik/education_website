@@ -1,0 +1,15 @@
+<%= form_for [:admin,@category] do |f| %>
+  <fieldset>
+  <legend><%= @category.legend_value %></legend>
+  
+  <div class="control-group">
+    <%= f.label :name, "Название" %>
+    <div class="controls"><%= f.text_field :name %></div>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit @category.button_value, :class => 'btn btn-primary'  %>
+  </div>
+  </fieldset>
+  
+<% end -%>

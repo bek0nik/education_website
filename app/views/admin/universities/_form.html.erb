@@ -1,4 +1,4 @@
-<%= form_for [:admin,@university] do |f| %>
+<%= nested_form_for [:admin,@university], :html => { :multipart => true, :class => 'form well'} do |f| %>
   <fieldset>
   <legend><%= @university.legend_value %></legend>
   <div class="control-group">
@@ -7,12 +7,30 @@
       <%= f.text_field :name %>
     </div>
   </div>
+  <%= f.fields_for :images do |i| %>
+    <%= image_tag(i.object.photo.url(:thumb)) if i.object.photo? %>
+    <%= i.object.description if i.object.description? %>
+    <%= i.label :photo, "ФОТО" %>
+    <%= i.file_field :photo %>
+    <%= i.hidden_field :photo_cache %>
+    <%= i.link_to_remove "Удалить" %>
+    <%= i.label :description, "Описание" %>
+    <%= i.text_area :description, :rows => 4 %>
+  <% end %>
+  <%= f.link_to_add "Добавить", :images %>
   <div class="control-group">
     <%= f.label :description, "Описание" %>
     <div class="controls">
-      <%= f.text_area :description, :rows => 12 %>
+      <%= f.text_area :description,  :class => "input-xlarge" %>
     </div>
   </div>
+  <%= hidden_field_tag "university[speciality_ids][]", nil %>
+  <% Speciality.all.each do |speciality| %>
+  <div class="control-group">
+     <%= label_tag speciality.name %>  
+    <div class="controls"><%= check_box_tag "university[speciality_ids][]", speciality.id, @university.speciality_ids.include?(speciality.id) %></div> 
+  </div>
+  <% end %>
   <div class="form-actions">
     <%= f.submit @university.button_value, :class =>'btn btn-primary' %>
     <button type='reset' class="btn cancel-form">Отмена</button>

@@ -7,6 +7,10 @@ class Admin::UniversitiesController < ApplicationController
     @universities = University.all    
   end
   
+  def show
+    @university = University.find(params[:id])    
+  end
+  
   def new
     @university = University.new    
   end
@@ -41,6 +45,10 @@ class Admin::UniversitiesController < ApplicationController
     @university.destroy
     flash[:notice] = "Successfully"
     redirect_to admin_universities_path
+  end
+  
+  def add_img
+    @university = University.find(params[:id])    
   end
   
 end

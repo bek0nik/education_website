@@ -1,3 +1,4 @@
+#encoding:UTF-8
 class Admin::QuestionsController < ApplicationController
   respond_to :html
   layout 'admin'

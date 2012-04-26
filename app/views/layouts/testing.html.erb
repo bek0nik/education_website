@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="exit"><%= link_to 'Выход', root_path %></div>
+<div class="row">
+  <div class="span12"><div id="exit"><%= link_to 'Выход', root_path %></div></div>
+</div>
+<div class="row">
+  <div class="span12"><%= yield %></div>
+</div>
 
-<%= yield %>
 </body>
 </html>

@@ -23,12 +23,15 @@ end
 gem 'jquery-rails'
 
 gem "kaminari", "~> 0.13.0"
-
+gem "carrierwave", "~> 0.6.2"
+gem "mini_magick", "~> 3.4"
+gem "nested_form", "~> 0.2.0"
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem "omniauth-facebook"
 gem "omniauth-vkontakte", "~> 1.0.6"
+gem "omniauth-mailru", "~> 1.0.0"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

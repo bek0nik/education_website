@@ -1,5 +1,8 @@
 #encoding:UTF-8
 class Speciality < ActiveRecord::Base
+  has_many :categorizations
+  belongs_to :category
+  has_many :universities, :through => :categorizations, :uniq => true
   def button_value
     if new_record?
       "Добавить"

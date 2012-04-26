@@ -2,12 +2,18 @@
 
 <% unless @university.images.empty? %>
 <ul id="slideshow">
-<% @img.each do |i| %>
- <li> <h3></h3><p><%= i.description %></p>
-  <span><%=  i.photo.url(:medium) %></span>
-  <%= image_tag i.photo.url(:thumb) %>
+  <% @img.each do |i| %>
+  <li>
+    <h3></h3>
+    <% unless i.description.empty? %>
+    <p></p>  
+    <% else %>
+      <p><%= i.description %></p>
+    <% end %>
+    <span><%=  i.photo.url(:medium) %></span>
+    <%= image_tag i.photo.url(:thumb) %>
   </li>
- <% end %> 
+  <% end %> 
 </ul>
 
 	<div id="wrapper">

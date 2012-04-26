@@ -1,0 +1,5 @@
+<%= link_to 'Добавить', new_admin_category_path, :class => 'btn' %>
+<% @categories.each do |c| %>
+  <%= c.name %>
+  
+<% end %>

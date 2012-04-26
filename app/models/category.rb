@@ -3,6 +3,9 @@ class Category < ActiveRecord::Base
   has_many :specialities
   has_many :universities
   
+  def self.ascname
+    order("name ASC")    
+  end
   def button_value
     if new_record?
       "Добавить"

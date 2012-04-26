@@ -1,10 +1,14 @@
 EducationWebsite::Application.routes.draw do
 
-  resources :specialities
+  resources :images
 
-  resources :authentications
-  match '/auth/:provider/callback' => 'authentications#create' 
+  resources :categories
+
+  resources :specialities
+  resources :questions
   resources :universities
+  resources :authentications
+  match '/auth/:provider/callback' => 'authentications#create'
 
   resources :users
   resource :sessions
@@ -12,8 +16,6 @@ EducationWebsite::Application.routes.draw do
   get "signup" => 'users#new', :as => :signup
   get "login" => 'sessions#new', :as => :login
   get "logout" => 'sessions#destroy', :as => :logout
-
-  resources :questions
 
   resources :test_names do
     get "start", :on => :member, :as => :start
@@ -26,8 +28,12 @@ EducationWebsite::Application.routes.draw do
   namespace :admin do
     resources :questions
     resources :test_names
-    resources :universities
-    resources :specialities  
+    resources :universities do
+      resources :images, :only => [:create, :destroy]
+        get "add_img", :on => :member, :as => :add_img
+    end
+    resources :specialities
+    resources :categories  
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -32,7 +32,7 @@
     </ul>
     <div id="search">
       <%= form_tag sessions_path do %>
-        <%= text_field_tag :q, nil %>
+        <%= text_field_tag :q, nil, :placeholder => "Поиск ..." %>
         <%= submit_tag "", :id => 'submit-search' %>
       <% end %>
     </div>

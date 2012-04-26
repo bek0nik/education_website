@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419072851) do
+ActiveRecord::Schema.define(:version => 20120426174829) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +19,28 @@ ActiveRecord::Schema.define(:version => 20120419072851) do
     t.string   "uid"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categorizations", :force => true do |t|
+    t.integer  "speciality_id"
+    t.integer  "university_id"
+    t.text     "description"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "photo"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "university_id"
+    t.text     "description"
   end
 
   create_table "questions", :force => true do |t|
@@ -36,8 +58,10 @@ ActiveRecord::Schema.define(:version => 20120419072851) do
   create_table "specialities", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "university_id"
+    t.integer  "category_id"
   end
 
   create_table "test_names", :force => true do |t|

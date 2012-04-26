@@ -2,17 +2,22 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Действия</th>
     </tr>
   </thead>
   <tbody>
   <% @universities.each do |u| %>
     <tr>
       <td><%= u.name %></td>
-      <td></td>
-      <td></td>
+      <td><%= u.description %></td>
+      <td>
+        <div class="actions">
+          <%= link_to edit_icon, edit_admin_university_path(u) %>
+          <%= link_to delete_icon, admin_university_path(u), :method => :delete %>
+        </div>
+      </td>
     </tr>
   <% end %>
   </tbody>

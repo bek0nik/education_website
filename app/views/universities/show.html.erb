@@ -1,0 +1,54 @@
+<b><%= @university.name %></b>
+
+<% unless @university.images.empty? %>
+<ul id="slideshow">
+<% @img.each do |i| %>
+ <li> <h3></h3><p><%= i.description %></p>
+  <span><%=  i.photo.url(:medium) %></span>
+  <%= image_tag i.photo.url(:thumb) %>
+  </li>
+ <% end %> 
+</ul>
+
+	<div id="wrapper">
+		<div id="fullsize">
+			<div id="imgprev" class="imgnav" title="Предыдущее фото"></div>
+			<div id="imglink"></div>
+			<div id="imgnext" class="imgnav" title="Следующее фото"></div>
+			<div id="image"></div>
+			<div id="information">
+				<h3></h3>
+				<p></p>
+			</div>
+		</div>
+		<div id="thumbnails">
+			<div id="slideleft" title="Влево"></div>
+			<div id="slidearea">
+				<div id="slider"></div>
+			</div>
+			<div id="slideright" title="Направо"></div>
+		</div>
+	</div>
+<% else %>
+
+<% end %>
+
+
+<script type="text/javascript">
+	$('slideshow').style.display='none';
+	$('wrapper').style.display='block';
+	var slideshow=new TINY.slideshow("slideshow");
+	window.onload=function(){
+		slideshow.auto=true;
+		slideshow.speed=5;
+		slideshow.link="linkhover";
+		slideshow.info="information";
+		slideshow.thumbs="slider";
+		slideshow.left="slideleft";
+		slideshow.right="slideright";
+		slideshow.scrollSpeed=4;
+		slideshow.spacing=5;
+		slideshow.active="#fff";
+		slideshow.init("slideshow","image","imgprev","imgnext","imglink");
+	}
+</script>

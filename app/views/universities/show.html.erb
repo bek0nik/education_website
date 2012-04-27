@@ -6,9 +6,9 @@
   <li>
     <h3></h3>
     <% unless i.description.empty? %>
-    <p></p>  
+    <p><%= i.description %></p>  
     <% else %>
-      <p><%= i.description %></p>
+      <p></p>
     <% end %>
     <span><%=  i.photo.url(:medium) %></span>
     <%= image_tag i.photo.url(:thumb) %>

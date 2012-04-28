@@ -10,18 +10,25 @@
   <%= f.fields_for :images do |i| %>
     <%= image_tag(i.object.photo.url(:thumb)) if i.object.photo? %>
     <%= i.object.description if i.object.description? %>
+    <div class="control-group">
     <%= i.label :photo, "ФОТО" %>
-    <%= i.file_field :photo %>
+    <div class="controls">
+    <%= i.file_field :photo, :class => 'input-file' %>
+    <%= i.radio_button :logo, "Основное" %>
+    </div>
+    </div>
     <%= i.hidden_field :photo_cache %>
+    <div class="control-group">
+      <%= i.label :description, "Описание" %>
+      <div class="controls"><%= i.text_area :description, :rows => 4 %></div>
+    </div>    
     <%= i.link_to_remove "Удалить" %>
-    <%= i.label :description, "Описание" %>
-    <%= i.text_area :description, :rows => 4 %>
   <% end %>
   <%= f.link_to_add "Добавить", :images %>
   <div class="control-group">
     <%= f.label :description, "Описание" %>
     <div class="controls">
-      <%= f.text_area :description,  :class => "input-xlarge" %>
+      <%= f.text_area :description,  :class => "input-xlarge", :rows => 6, :cols => 30 %>
     </div>
   </div>
   <%= hidden_field_tag "university[speciality_ids][]", nil %>

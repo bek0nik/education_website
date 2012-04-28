@@ -1,0 +1,7 @@
+<%= form_for(@comment) do |f| %>
+  <%= f.label :comment_text %>
+  <%= f.text_area :comment_text, rows: 5, cols: 20 %>
+  <%= f.hidden_field :university_id, value: @university.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "Опубликовать" %>
+<% end %>

@@ -1,14 +1,14 @@
-<b><%= @university.name %></b>
-
+<div id="uni-show">
+<h1 id="title"><%= @university.name %></h1>
 <% unless @university.images.empty? %>
 <ul id="slideshow">
   <% @img.each do |i| %>
   <li>
     <h3></h3>
     <% unless i.description.empty? %>
-    <p></p>  
+    <p><%= i.description %></p>  
     <% else %>
-      <p><%= i.description %></p>
+      <p></p>
     <% end %>
     <span><%=  i.photo.url(:medium) %></span>
     <%= image_tag i.photo.url(:thumb) %>
@@ -38,8 +38,6 @@
 <% else %>
 
 <% end %>
-
-
 <script type="text/javascript">
 	$('slideshow').style.display='none';
 	$('wrapper').style.display='block';
@@ -58,3 +56,7 @@
 		slideshow.init("slideshow","image","imgprev","imgnext","imglink");
 	}
 </script>
+<div id="university-description">
+  <%= @university.description %>
+</div>
+</div>

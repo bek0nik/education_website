@@ -1,3 +1,7 @@
 <% @universities.each do |u| %>
-  <%= link_to u.name, university_path(u) %>
+  <div id="universities">
+  <h1 id="univer-list"><%= link_to u.name, university_path(u) %></h1>
+    <%= image_tag('app/banner1.jpg') %> количество комментов
+    <%= u.description %>
+  </div>
 <% end %>

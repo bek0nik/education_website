@@ -44,7 +44,7 @@
 	var slideshow=new TINY.slideshow("slideshow");
 	window.onload=function(){
 		slideshow.auto=true;
-		slideshow.speed=5;
+		slideshow.speed=3;
 		slideshow.link="linkhover";
 		slideshow.info="information";
 		slideshow.thumbs="slider";
@@ -60,3 +60,8 @@
   <%= @university.description %>
 </div>
 </div>
+<%= render :partial => 'comments/comments' %>
+<% if user_has? %> 
+<%= render :partial => 'comments/form' %>
+<% else %>
+<% end %>

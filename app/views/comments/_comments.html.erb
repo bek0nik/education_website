@@ -1,0 +1,7 @@
+
+<div id="comments_count"><%= @university.comments.count %></div>
+<div id="comments">
+<% @university.comments.each do |c| %>
+  <%= raw(c.comment_text) %><br />
+<% end %>
+</div>

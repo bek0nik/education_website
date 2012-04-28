@@ -4,12 +4,19 @@
     font-style: italic;
   }
 }
-#universities{
-  border-bottom: 3px dotted #444433;
-}
 #univer-list{
+  border-bottom: 3px dotted #444433;
+  
+}
+#universities{
+  
+}
+#univer-name{
   a{
     color: #bdbdbd;
     font-family: italic;
   }
+}
+#univer-photo{
+  float:left;
 }

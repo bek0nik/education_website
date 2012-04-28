@@ -1,5 +1,7 @@
 EducationWebsite::Application.routes.draw do
 
+  resources :comments
+
   resources :images
 
   resources :categories

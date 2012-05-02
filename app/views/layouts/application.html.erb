@@ -5,6 +5,7 @@
   <%= favicon_link_tag %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= ajaxful_rating_style %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -18,8 +19,10 @@
       
       <!--top-->
       <div id="top">
-        <div id="logo"><%= link_to image_tag('logo.png'), root_path  %></div>
+        
         <div id="company_name">Сайт для абитуриентов</div>
+        <b><%= link_to_unless_current "ру", :locale => "ru" %>
+        <%= link_to_unless_current "каз", :locale => "kz"  %></b>
       </div>
       <!--end top-->
 
@@ -35,13 +38,19 @@
         <div id="sidebar">
           <h3 id="social-title">Мы в ...</h3>
           <ul class="social">
-            <li class="img"> <%= image_tag('facebook_32.png') %></li>
+            <li class="img"><%= image_tag('facebook_32.png') %></li>
             <li class="img"><%= image_tag('twitter_32.png') %></li>
             <li class="img"><%= image_tag('google_32.png') %></li>
             <li class="img"><%= image_tag('github_32.png') %></li>
             <li class="img"><%= image_tag('myspace_32.png') %></li>
             <li class="img"><%= image_tag('basecamp_32.png') %></li>
           </ul>
+          <div id="popular-univer">
+            <% University.all.each do |u| %>
+              <%= u.name %> <br />
+            <% end %>
+          </div>
+          <br /><b>Полезные ссылки</b>
         </div> 
         <div style="clear:both;"></div>
       </div>

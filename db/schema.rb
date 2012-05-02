@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120428102625) do
+ActiveRecord::Schema.define(:version => 20120501122600) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -64,6 +64,19 @@ ActiveRecord::Schema.define(:version => 20120428102625) do
     t.string   "variant_4"
   end
 
+  create_table "rates", :force => true do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.integer  "stars",         :null => false
+    t.string   "dimension"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
+  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
+
   create_table "specialities", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -71,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20120428102625) do
     t.datetime "updated_at",    :null => false
     t.integer  "university_id"
     t.integer  "category_id"
+    t.string   "cipher"
   end
 
   create_table "test_names", :force => true do |t|
@@ -86,6 +100,18 @@ ActiveRecord::Schema.define(:version => 20120428102625) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "university_translations", :force => true do |t|
+    t.integer  "university_id"
+    t.string   "locale"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "university_translations", ["locale"], :name => "index_university_translations_on_locale"
+  add_index "university_translations", ["university_id"], :name => "index_university_translations_on_university_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

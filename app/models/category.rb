@@ -2,6 +2,7 @@
 class Category < ActiveRecord::Base
   has_many :specialities
   has_many :universities
+  translates :name
   
   def self.ascname
     order("name ASC")    

@@ -8,12 +8,15 @@
       <fieldset id="login_menu">
         <%= form_tag(sessions_path, :id => "login") do %>
           <%= label_tag :email, "Email" %>
-          <%= email_field_tag :email %>
+          <%= text_field_tag :email %>
   
           <%= label_tag :password, "пароль" %>
           <%= password_field_tag :password %>
   
           <%= submit_tag "Войти", :id => "login_submit" %>
+          <%= image_tag('facebook_32.png') %>
+          <%= image_tag('twitter_32.png') %>
         <% end %>
       </fieldset>
+      
     <% end %>

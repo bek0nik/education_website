@@ -1,7 +1,10 @@
 #encoding:UTF-8
 class User < ActiveRecord::Base
   has_many :authentications
+  has_many :comments, :dependent => :destroy
   has_secure_password
+  #rater
+  ajaxful_rater
   
   attr_accessible :email, :password, :password_confirmation
   

@@ -1,13 +1,18 @@
-<% @universities.each do |u| %><div id="univer-list">
-  <div id="universities">
+<div id="universities">
+<% @universities.each do |u| %>
+  <div id="univer-list">
   <h1 id="univer-name"><%= link_to u.name, university_path(u) %></h1>
+  <% if !u.images.logotip.empty? %>
   <div id="univer-photo">
-    <%= image_tag(u.images.first.photo_url(:thumb)) %>
+    <%= link_to image_tag(u.images.logotip.first.photo_url(:thumb)), university_path(u) %> 
   </div>
-    <i>Комментариев <%= u.comments.count %></i><br />
-    <%= u.description %>
-  </div>
+  <% else %>
+  <% end %>
+    <div id="comment-count">Комментариев: <%= u.comments.count %></div>
+    <div id="univer-desc">
+      <%= truncate(strip_tags(u.description), :length => 450) %><%= link_to 'Подробнее', u %>
+    </div>
   </div>
   <div style="clear:both;"></div>
 <% end %>
-
+</div>

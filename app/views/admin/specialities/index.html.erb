@@ -11,12 +11,15 @@
     <tr>
       <td><%= s.name %></td>
       <td><%= s.description %></td>
-      <td>#</td>
+      <td>
+        <%= link_to edit_icon, edit_admin_speciality_path(s) %>
+        <%= link_to delete_icon, admin_speciality_path(s) %>
+      </td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Добавить', new_admin_speciality_path %>
+<%= link_to 'Добавить', new_admin_speciality_path, :class => 'btn' %>
 
 
   

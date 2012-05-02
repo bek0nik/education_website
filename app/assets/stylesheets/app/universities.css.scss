@@ -4,13 +4,16 @@
     font-style: italic;
   }
 }
-#univer-list{
-  border-bottom: 3px dotted #444433;
-  
-}
 #universities{
-  
+  a{
+    color: #635a5a;
+  }
 }
+#univer-list{
+  
+  margin-bottom: 30px;
+  
+}S
 #univer-name{
   a{
     color: #bdbdbd;
@@ -19,4 +22,36 @@
 }
 #univer-photo{
   float:left;
+  border-top: 2px solid #eae3e3;
+  border-right: 2px solid #eae3e3;
+  border-left: 2px solid #eae3e3;
+  margin-right: 3px;
+  margin-bottom: 20px;
+}
+#comment-count{
+  font-size: 10px;
+  font-family: sans-serif;
+  font-style: oblique;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  color: #cdc6c6;
+  
+}
+#comments_count{
+  margin-top: 10px;
+}
+#university-description{
+  margin-top: 10px; 
+}
+#univer-desc{
+  font: 11px sans-serif;
+//   margin: 10px;
+//   padding: 0;
+//   border: 1px solid rgba(0,0,0,0.5);
+//   border-radius: 10px 10px 2px 2px;
+//   background: rgba(0,0,0,0.25);
+//   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+//   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+//   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+//   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
 }

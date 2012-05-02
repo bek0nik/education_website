@@ -55,11 +55,13 @@
 		slideshow.active="#fff";
 		slideshow.init("slideshow","image","imgprev","imgnext","imglink");
 	}
-</script>
+</script><div style="clear:both;"></div>
 <div id="university-description">
   <%= @university.description %>
 </div>
+
 </div>
+<%= render 'rating' %>
 <%= render :partial => 'comments/comments' %>
 <% if user_has? %> 
 <%= render :partial => 'comments/form' %>

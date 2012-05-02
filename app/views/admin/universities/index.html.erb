@@ -1,5 +1,5 @@
 <%= link_to 'Добавить ВУЗ', new_admin_university_path, :class => 'btn' %> <br/>
-<table class="table table-bordered">
+<table class="table table-bordered display" id="universities" data-source="<%= admin_universities_url(format: 'json')%>">
   <thead>
     <tr>
       <th>Название</th>
@@ -11,7 +11,7 @@
   <% @universities.each do |u| %>
     <tr>
       <td><%= u.name %></td>
-      <td><%= u.description %></td>
+      <td><%= truncate(u.description, :length => 300) %></td>
       <td>
         <div class="actions">
           <%= link_to edit_icon, edit_admin_university_path(u) %>

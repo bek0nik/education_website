@@ -13,6 +13,8 @@ gem 'mysql2'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-ui-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -26,6 +28,10 @@ gem "kaminari", "~> 0.13.0"
 gem "carrierwave", "~> 0.6.2"
 gem "mini_magick", "~> 3.4"
 gem "nested_form", "~> 0.2.0"
+gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
+
+#translate content
+gem "globalize3", "~> 0.2.0"
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -14,12 +14,12 @@
     <%= i.label :photo, "ФОТО" %>
     <div class="controls">
     <%= i.file_field :photo, :class => 'input-file' %>
-    <%= i.radio_button :logo, "Основное" %>
     </div>
+    <div class="controls"><%= i.check_box :logo %></div>
     </div>
     <%= i.hidden_field :photo_cache %>
     <div class="control-group">
-      <%= i.label :description, "Описание" %>
+      <%= i.label :description, "Комментарий фото" %>
       <div class="controls"><%= i.text_area :description, :rows => 4 %></div>
     </div>    
     <%= i.link_to_remove "Удалить" %>
@@ -32,7 +32,7 @@
     </div>
   </div>
   <%= hidden_field_tag "university[speciality_ids][]", nil %>
-  <% Speciality.all.each do |speciality| %>
+  <% Speciality.ascname.each do |speciality| %>
   <div class="control-group">
      <%= label_tag speciality.name %>  
     <div class="controls"><%= check_box_tag "university[speciality_ids][]", speciality.id, @university.speciality_ids.include?(speciality.id) %></div> 

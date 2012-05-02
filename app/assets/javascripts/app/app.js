@@ -15,25 +15,27 @@ $j(document).ready(function() {
     }
   });
 });
-
-//validates login
 $j(document).ready(function(){
-  $j('#login').validate({
-    rules: {
-      'email': {
-        required: true,
-        email: true,
-      },
-      'password': {
-        required: true
-      },
-    },
-    messages:{
-      'email': {
-        required: 'Введите email',
-        email: 'Введите корректный email',
-      },
-      'password': 'Введите пароль',
-    }
-  })
+  $j('ul#photo-anim').cycleThru({delay: 2000});
 });
+//validates login
+//$j(document).ready(function(){
+//  $j('#login').validate({
+//    rules: {
+//      'email': {
+//        required: true/*,
+//        email: true,*/
+//      },
+//      'password': {
+//        required: true
+//      },
+//    },
+//    messages:{
+//      'email': {
+//        required: 'Введите email',
+//        email: 'Введите корректный email',
+//      },
+//      'password': 'Введите пароль',
+//    }
+//  })
+//});

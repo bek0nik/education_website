@@ -5,6 +5,8 @@ class Speciality < ActiveRecord::Base
   has_many :universities, :through => :categorizations, :uniq => true
   validates :name, :cipher, :presence => true, :uniqueness => {:case_sensitive => false }
   scope :ascname, order('name ASC')
+  #translations
+  translates :name, :description
   def button_value
     if new_record?
       "Добавить"

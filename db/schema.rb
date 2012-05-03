@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502134306) do
+ActiveRecord::Schema.define(:version => 20120503075457) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(:version => 20120502134306) do
     t.integer  "university_id"
     t.integer  "user_id"
   end
+
+  create_table "image_translations", :force => true do |t|
+    t.integer  "image_id"
+    t.string   "locale"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "image_translations", ["image_id"], :name => "index_image_translations_on_image_id"
+  add_index "image_translations", ["locale"], :name => "index_image_translations_on_locale"
 
   create_table "images", :force => true do |t|
     t.string   "photo"
@@ -97,6 +108,18 @@ ActiveRecord::Schema.define(:version => 20120502134306) do
     t.integer  "category_id"
     t.string   "cipher"
   end
+
+  create_table "speciality_translations", :force => true do |t|
+    t.integer  "speciality_id"
+    t.string   "locale"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "speciality_translations", ["locale"], :name => "index_speciality_translations_on_locale"
+  add_index "speciality_translations", ["speciality_id"], :name => "index_speciality_translations_on_speciality_id"
 
   create_table "test_names", :force => true do |t|
     t.string   "title"

@@ -30,7 +30,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
       flash[:notice] = "Successfully"
-      respond_with(@category, :location => admin_categiries_path)
+      respond_with(@category, :location => admin_categories_path)
     else
       flash[:error] = "NO!"
       render 'edit'

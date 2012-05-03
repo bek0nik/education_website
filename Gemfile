@@ -30,6 +30,8 @@ gem "mini_magick", "~> 3.4"
 gem "nested_form", "~> 0.2.0"
 gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
 
+#tinymce
+gem "tinymce-rails", "~> 3.4.9"
 #translate content
 gem "globalize3", "~> 0.2.0"
 # To use ActiveModel has_secure_password

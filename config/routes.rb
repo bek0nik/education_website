@@ -1,39 +1,41 @@
 EducationWebsite::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do 
-  resources :comments
-  resources :images
-  resources :categories
-  resources :specialities
-  resources :questions
-  resources :universities do
-    post 'rate', :on => :member
-  end
-  resources :authentications
-  match '/auth/:provider/callback' => 'authentications#create'
-  resources :users
-  resource :sessions
-  get "signup" => 'users#new', :as => :signup
-  get "login" => 'sessions#new', :as => :login
-  get "logout" => 'sessions#destroy', :as => :logout
-  resources :test_names do
-    get "start", :on => :member, :as => :start
-  end
-  get "pages/index"
-  match '/about' => 'pages#about', :as => :about
-  root :to => 'pages#index'
-  
-  
-  match "admin" => "admin#index", :as => :admin
-  namespace :admin do
-    resources :questions
-    resources :test_names
-    resources :universities do
-      resources :images, :only => [:create, :destroy]
-        get "add_img", :on => :member, :as => :add_img
-    end
+    resources :comments
+    resources :images
+    resources :categories
     resources :specialities
-    resources :categories  
-  end
+    resources :questions
+    resources :universities do
+      post 'rate', :on => :member
+    end
+    
+    resources :authentications
+    match '/auth/:provider/callback' => 'authentications#create'
+    resources :users
+    resource :sessions
+    get "signup" => 'users#new', :as => :signup
+    get "login" => 'sessions#new', :as => :login
+    get "logout" => 'sessions#destroy', :as => :logout
+    resources :test_names do
+      get "start", :on => :member, :as => :start
+    end
+    get "pages/index"
+    match '/about' => 'pages#about', :as => :about
+    
+    root :to => 'pages#index'
+  
+  
+    match "admin" => "admin#index", :as => :admin
+    namespace :admin do
+      resources :questions
+      resources :test_names
+      resources :universities do
+        resources :images, :only => [:create, :destroy]
+          get "add_img", :on => :member, :as => :add_img
+      end
+      resources :specialities
+      resources :categories  
+    end
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   match '', to: redirect("/#{I18n.default_locale}")

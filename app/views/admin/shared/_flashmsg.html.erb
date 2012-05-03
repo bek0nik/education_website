@@ -1,0 +1,22 @@
+<% if flash[:notice] %>
+  <% flash.each do |name, msg| %>
+    <div id="flash_<%= name %>" class="alert alert-success">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= msg %>
+    </div>
+  <% end %>
+<% elsif flash[:alert] %>
+  <% flash.each do |name, msg| %>
+    <div id="flash_<%= name %>" class="alert alert-error">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= msg %>
+    </div>
+  <% end %>
+<% elsif flash[:error] %>
+<% flash.each do |name, msg| %>
+  <div id="flash_<%= name %>" class="alert alert-error">
+    <a class="close" data-dismiss="alert">×</a>
+    <%= msg %>
+  </div>      
+  <% end %>
+<% end %>

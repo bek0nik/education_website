@@ -6,7 +6,7 @@
   <li>
     <h3></h3>
     <% unless i.description.empty? %>
-    <p><%= i.description %></p>  
+    <p><%= raw(i.description) %></p>  
     <% else %>
       <p></p>
     <% end %>
@@ -57,7 +57,7 @@
 	}
 </script><div style="clear:both;"></div>
 <div id="university-description">
-  <%= @university.description %>
+  <%= raw(@university.description) %>
 </div>
 
 </div>

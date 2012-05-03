@@ -1,4 +1,5 @@
 <%= nested_form_for [:admin,@university], :html => { :multipart => true, :class => 'form well'} do |f| %>
+  <%= error_messages_for(@university) %>
   <fieldset>
   <legend><%= @university.legend_value %></legend>
   <div class="control-group">
@@ -28,7 +29,7 @@
   <div class="control-group">
     <%= f.label :description, "Описание" %>
     <div class="controls">
-      <%= f.text_area :description,  :class => "input-xlarge", :rows => 6, :cols => 30 %>
+      <%= f.text_area :description,  :id => "tinymce", :rows => 10, :cols =>20 %>
     </div>
   </div>
   <%= hidden_field_tag "university[speciality_ids][]", nil %>
@@ -45,3 +46,9 @@
   
   </fieldset>
 <% end %>
+<script type="text/javascript">
+  tinyMCE.init({
+    mode: 'textareas',
+    theme: 'advanced'
+  });
+</script>

@@ -1,8 +1,10 @@
-
-<div id="comments_count"><%= @university.comments.count %></div>
+<div id="comments_count">Коментариев: <%= @university.comments.count %></div>
 <div id="comments">
 <% @university.comments.each do |c| %>
+  <div id="comment">
   <%= c.user.email %>
-  <%= raw(c.comment_text) %><br />
+  <%= to_datetime(c.updated_at) %>
+  <%= raw(c.comment_text) %>
+  </div>
 <% end %>
 </div>

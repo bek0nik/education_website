@@ -11,7 +11,7 @@
   <% @universities.each do |u| %>
     <tr>
       <td><%= u.name %></td>
-      <td><%= truncate(u.description, :length => 300) %></td>
+      <td><%= truncate(raw(u.description), :length => 300) %></td>
       <td>
         <div class="actions">
           <%= link_to edit_icon, edit_admin_university_path(u) %>

@@ -1,6 +1,7 @@
 ru:
-  layout:
-    univer: "ВУЗЫ"
+  layouts:
+    application: 
+      about: "О нас"
   pages:
     index: 
       title: "Добро пожаловать"

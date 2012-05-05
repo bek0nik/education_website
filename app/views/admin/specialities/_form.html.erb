@@ -1,9 +1,16 @@
 <%= form_for([:admin,@speciality]) do |f| %>
+  <%= error_messages_for(@speciality) %>
   <fieldset>
     <legend><%= @speciality.legend_value %></legend>
     <div class="control-group">
       <%= f.label :name, "Название" %>
       <div class="controls"><%= f.text_field :name %></div>
+    </div>
+    <div class="control-group">
+      <%= f.label :cipher, "Шифр" %>
+      <div class="controls">
+        <%= f.text_field :cipher %>        
+      </div>
     </div>
     <div class="control-group">
       <%= f.label :category_id, "Категория" %>

@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Название</th>
+      <th>Шифр</th>
       <th>Описание</th>
       <th>Действия</th>
     </tr>
@@ -10,10 +11,11 @@
   <% @specialities.each do |s| %>
     <tr>
       <td><%= s.name %></td>
+      <td><%=  %></td>
       <td><%= s.description %></td>
       <td>
         <%= link_to edit_icon, edit_admin_speciality_path(s) %>
-        <%= link_to delete_icon, admin_speciality_path(s) %>
+        <%= link_to delete_icon, admin_speciality_path(s), method: :delete, confirm: "Вы уверены?" %>
       </td>
     </tr>
     <% end %>

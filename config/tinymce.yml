@@ -1,0 +1,1 @@
+<%= tinymce :theme => "simple", :language => "ru", :plugins => ["inlinepopups", "paste"] %>

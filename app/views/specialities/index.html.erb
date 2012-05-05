@@ -1,3 +1,19 @@
-<% @specialities.each do |s| %>
-    <%= s.name %>
-<% end %>
+<div id="speciality-index">
+<table id="speciality-table">
+  <thead>
+  <tr id="info">
+    <th>Специальность</th>
+    <th>Шифр</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @specialities.each do |s| %>
+  <tr>
+    <td><%= link_to s.name, speciality_path(s) %></td>
+    <td><%= s.cipher %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+</div>

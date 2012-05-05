@@ -4,4 +4,8 @@ class Rate < ActiveRecord::Base
   validates_numericality_of :stars, :minimum => 1
   
   attr_accessible :rate, :dimension
+  
+  def self.rating
+        
+  end
 end

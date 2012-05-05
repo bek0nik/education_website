@@ -1,0 +1,32 @@
+#speciality-index{
+  margin: 10px;
+  #speciality-table{
+    
+    #info{
+      background:#ebc979;
+      color:white;
+      td{
+        font-weight: bold;
+        padding:7px 3px;  
+      }
+    }
+    margin:20px auto 0px auto;
+    width: 100%;
+    border-collapse: collapse;
+    border:1px solid #ccc;
+    tr{
+      background:#fff;
+      td{
+        color:#606060;
+        border:1px solid #ccc;
+        padding:3px;
+      }
+      &:hover{
+        background:#FAFAFA;
+      }
+    }
+    a{
+      color: #505050;  
+    }
+  }
+}

@@ -26,6 +26,5 @@ class University < ActiveRecord::Base
     else
       'Редактирование'
     end
-    
   end
 end

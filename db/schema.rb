@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120503075457) do
+ActiveRecord::Schema.define(:version => 20120505093323) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20120503075457) do
   create_table "image_translations", :force => true do |t|
     t.integer  "image_id"
     t.string   "locale"
-    t.text     "description"
+    t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(:version => 20120503075457) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "university_id"
-    t.text     "description"
+    t.string   "description"
     t.boolean  "logo"
   end
 

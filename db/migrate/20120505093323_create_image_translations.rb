@@ -1,7 +1,7 @@
 class CreateImageTranslations < ActiveRecord::Migration
   def up
     Image.create_translation_table!({
-      description: :text
+      description: :string
     }, {
       migrate_data: true
     })

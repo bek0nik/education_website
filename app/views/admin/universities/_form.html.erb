@@ -21,7 +21,7 @@
     <%= i.hidden_field :photo_cache %>
     <div class="control-group">
       <%= i.label :description, "Комментарий фото" %>
-      <div class="controls"><%= i.text_area :description, :rows => 4 %></div>
+      <div class="controls"><%= i.text_field :description %></div>
     </div>    
     <%= i.link_to_remove "Удалить" %>
   <% end %>

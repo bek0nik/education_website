@@ -4,4 +4,5 @@ class Image < ActiveRecord::Base
   scope :logotip, where(:logo => true)
   #translations
   translates :description
+  #validates :photo, :presence => true
 end

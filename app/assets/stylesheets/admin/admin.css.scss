@@ -1,0 +1,41 @@
+#list-images{
+  margin-bottom: 15px;
+  li{
+    margin-bottom: 5px;
+    margin-left: 15px;
+    float:left;
+    border: 1px solid black;
+    
+    #photo-form{
+      img{
+        width: 200px;
+        height: 100px; 
+        margin: 10px 15px 0px 0px;
+        
+      }
+      margin-bottom: 0px;
+    }
+    #photo-input{
+      margin-top: 3px;
+      margin-bottom: 0px;
+    }
+    #photo-logo{
+      margin-top: 1px;
+      margin-bottom: 0px;
+    }
+    #photo-description{
+      margin-top: 1px;
+      margin-bottom: 1px;     
+    }
+    #photo-actions{
+      margin-top: 1px;
+    }
+  }
+}
+#add-button{
+  clear:both;
+  
+}
+div.clr{
+  clear:both;
+}

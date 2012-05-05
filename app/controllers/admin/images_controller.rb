@@ -12,7 +12,15 @@ class Admin::ImagesController < ApplicationController
       end    
     end 
   end
-end
+  def destroy
+    respond_to do |f|
+      unless @photo.destroy
+        flash[:error] = "К сожалению, изображение не удалилось"
+      end
+      format.js
+    end
+  end
+
   private
     def find_univer
       @university = University.find(params[:university_id])
@@ -22,3 +30,4 @@ end
     def find_or_build_photo
       @image = params[:id] ? @university.images.find(params[:id]) : @university.images.build(params[:image])
     end
+end

@@ -1,1 +1,3 @@
 <%= image_tag(image.name_url.to_s) if image.name? %>
+<%= link_to delete_icon, university_image_path(@university, photo), 
+        :method => :delete, :remote => :true, :title => "Удалить" %>

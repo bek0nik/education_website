@@ -1,20 +1,21 @@
+#encoding : utf-8
 class Admin::ImagesController < ApplicationController
   before_filter :find_univer
   before_filter :find_or_build_photo
   layout 'admin'  
   def create
     respond_to do |f|
-      unless @photo.save
+      unless @image.save
         flash[:error] = "NO"
       end
       f.js do
-        render text: render_to_string(partial: 'images/photo', locals: { photo: @photo})
+        render :text => render_to_string(partial: 'admin/images/photo', :locals => { image: @image})
       end    
     end 
   end
   def destroy
     respond_to do |f|
-      unless @photo.destroy
+      unless @image.destroy
         flash[:error] = "К сожалению, изображение не удалилось"
       end
       format.js

@@ -1,8 +1,9 @@
 EducationWebsite::Application.routes.draw do
-  resources :cities
+  
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do 
     resources :comments
+    resources :cities
     resources :images
     resources :categories
     resources :specialities
@@ -29,11 +30,13 @@ EducationWebsite::Application.routes.draw do
   
     match "admin" => "admin#index", :as => :admin
     namespace :admin do
+      resources :cities
       resources :questions
       resources :test_names
       resources :universities do
         resources :images, :only => [:create, :destroy]
-          get "add_img", :on => :member, :as => :add_img
+        get "add_img", :on => :member, :as => :add_img
+          
       end
       resources :specialities
       resources :categories  

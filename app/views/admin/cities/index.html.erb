@@ -1,0 +1,5 @@
+<% @cities.each do |c| %>
+  <%= c.name %>
+  <%= link_to "edit", edit_admin_city_path(c) %>
+<% end %>
+<%= link_to 'new', new_admin_city_path %>

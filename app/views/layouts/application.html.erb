@@ -21,8 +21,10 @@
       <div id="top">
         
         <div id="company_name">Сайт для абитуриентов</div>
-        <b><%= link_to_unless_current "ру", :locale => "ru" %>
-        <%= link_to_unless_current "каз", :locale => "kz"  %></b>
+        <div id="locale">
+        <%= link_to_unless_current "РУС", :locale => "ru" %>
+        <%= link_to_unless_current "ҚАЗ", :locale => "kz"  %>
+        </div>
       </div>
       <!--end top-->
 

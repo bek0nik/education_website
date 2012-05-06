@@ -1,5 +1,6 @@
 #encoding:UTF-8
 class Admin::UniversitiesController < ApplicationController
+  before_filter :all_deny
   layout 'admin'
   respond_to :html
   def index

@@ -10,4 +10,12 @@ class User < ActiveRecord::Base
   
   validates :email, :uniqueness => { :case_sensitive => false}
   validates :password_confirmation, :presence => true
+  
+  def self.admin(user)
+    if user.role == true
+      true
+    else
+      false
+    end
+  end
 end

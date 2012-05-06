@@ -17,17 +17,17 @@ p{
 a img{
   border:0;
 }
-a{
-  color: #ff8400;
-  text-decoration:underline;
-}
-a:hover{color: #f5bd01;	text-decoration:underline;}
-a.hidden{text-decoration: none;color:#000;cursor:default;}
+/*a{*/
+/*  color: #ff8400;*/
+/*  text-decoration:underline;*/
+/*}*/
+/*a:hover{color: #f5bd01;	text-decoration:underline;}*/
+/*a.hidden{text-decoration: none;color:#000;cursor:default;}
 
 form{margin:0;padding:0;}
 div.clr{clear:both;}
 
-/*ul{margin:0 0 0 20px;padding:0;list-style-type: square;line-height: 16px;}*/
+ul{margin:0 0 0 20px;padding:0;list-style-type: square;line-height: 16px;}*/
 
 h1{font-size:20px;font-weight:normal;color:#000;margin:5px 0 10px;}
 h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
@@ -35,10 +35,39 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
 #wrap{position:relative; min-height:100%; margin:0 auto; width:100%;}
 #page{width:990px;margin:0 auto; padding-bottom:70px;}
 
-#top{height:81px;margin: 0 auto; width: 990px; overflow:hidden;}
-#logo{position:absolute; margin:20px 0 0 20px;}
-#company_name{font-size:1.3em;font-weight:normal;text-transform: none;color: #ff8400; font-family: Comic Sans MS, Helvetica, Palatino, Tahoma, Geneva, sans-serif; margin:25px 0 0 95px; width:300px; position:absolute;}
-
+#top{
+  height:81px;
+  margin: 0 auto; 
+  width: 990px; 
+  overflow:hidden;
+  #logo{
+    position:absolute; 
+    margin:20px 0 0 20px;
+  }
+  #company_name{
+    font-size:1.3em;
+    font-weight:normal;
+    text-transform: none;
+    color: #ff8400; 
+    font-family: Comic Sans MS, Helvetica, Palatino, Tahoma, Geneva, sans-serif; 
+    margin:25px 0 0 95px; 
+    width:300px; 
+    position:absolute;
+  }
+  #locale{
+    font-style: italic;
+    font-size: 11px;
+    a{
+      color: #fff;
+    }
+    a:hover{
+      color: #ebbebb;
+    }
+    a:visited{
+      color: #f6a32f;
+    }
+  }
+}
 
 #menu {
   color: #FFF;
@@ -73,6 +102,7 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
   }
 }
 #magic-line { position: absolute; bottom: -2px; left: 0; width: 100px; height: 2px; background: #fe4902; }
+/*search*/
 #search {
   float:right;
   padding-top: 4px;
@@ -109,7 +139,7 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
   }
 }
 
-
+/*contentwrap*/
 #contentwrap{
   position:relative;
   overflow:hidden;
@@ -120,7 +150,7 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
   -moz-border-radius:8px;
   border-radius:8px;
   -o-border-radius:8px;
-
+/*bodyarea*/
 	#body_area{
 	  color:#000;
 	  text-align: justify;
@@ -141,6 +171,7 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
 	  width:990px;
 	  font-size:12px;
 	}
+/*	sidebar*/
 	#sidebar{
 	  border-top-right-radius: 8px;
 	  border-bottom-right-radius: 8px;
@@ -185,6 +216,7 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
 }
 #login_form{height: 20px;width: 150px;font-size: 12px;}
 
+/*footer*/
 #footer{
   height:100px; 
   background:#8ec227 url('footer_bg.png') no-repeat scroll 0 0;

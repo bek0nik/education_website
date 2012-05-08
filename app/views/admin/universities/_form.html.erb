@@ -8,26 +8,31 @@
       <%= f.text_field :name %>
     </div>
   </div>
+  <ul id="list-images">
   <%= f.fields_for :images do |i| %>
-    <%= image_tag(i.object.photo.url(:thumb)) if i.object.photo? %>
-    <%= i.object.description if i.object.description? %>
-    <div class="control-group">
-    <%= i.label :photo, "ФОТО" %>
-    <div class="controls">
+    <li id="list-image">
+    <p id="photo-form"><%= image_tag(i.object.photo.url(:thumb)) if i.object.photo? %></p>
+    <p id="photo-input">
     <%= i.file_field :photo, :class => 'input-file' %>
-    </div>
-    <div class="controls"><%= i.check_box :logo %></div>
-    </div>
+    </p>
+    <p id="photo-logo">
+      <%= i.check_box :logo %>
+    </p>
     <%= i.hidden_field :photo_cache %>
-    <div class="control-group">
+    <p class="photo-description">
       <%= i.label :description, "Комментарий фото" %>
-      <div class="controls"><%= i.text_area :description, :rows => 4 %></div>
-    </div>    
-    <%= i.link_to_remove "Удалить" %>
-  <% end %>
-  <%= f.link_to_add "Добавить", :images %>
+      <%= i.text_field :description %>
+    </p>
+    <p id="photo-actions">   
+      <%= i.link_to_remove "Удалить" %>
+    </p>
+    </li>
+  <% end %><div class="clr"></div>
+  <%= f.link_to_add "Добавить", :images, :id => "add-buuton", :class => "btn" %>
+  </ul>
+  <div class="clr"></div>
   <div class="control-group">
-    <%= f.label :description, "Описание" %>
+    <%= f.label :description, "Описание заведения" %>
     <div class="controls">
       <%= f.text_area :description,  :id => "tinymce", :rows => 10, :cols =>20 %>
     </div>

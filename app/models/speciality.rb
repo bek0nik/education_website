@@ -22,4 +22,12 @@ class Speciality < ActiveRecord::Base
       "Изменение"      
     end    
   end
+  
+  def self.search(search)
+    if search
+      where('name LIKE ? OR cipher LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      scoped
+    end 
+  end
 end

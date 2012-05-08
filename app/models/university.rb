@@ -4,6 +4,7 @@ class University < ActiveRecord::Base
   has_many :specialities, :through => :categorizations, :uniq => true
   has_many :images, dependent: :destroy
   has_many :comments, :dependent => :destroy
+  belongs_to :city
   accepts_nested_attributes_for :images
   validates :name, presence: true
   validates :description, :presence => true
@@ -26,5 +27,10 @@ class University < ActiveRecord::Base
     else
       'Редактирование'
     end
+  end
+  
+  def self.rating
+    @uni = Rate.where(:rateable_type => "University").limit(3)
+    @pop = University.where(:id => @uni.rateable_id)
   end
 end

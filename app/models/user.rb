@@ -6,8 +6,16 @@ class User < ActiveRecord::Base
   #rater
   ajaxful_rater
   
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :role
   
   validates :email, :uniqueness => { :case_sensitive => false}
   validates :password_confirmation, :presence => true
+  
+  def self.admin(user)
+    if user.role == true
+      true
+    else
+      false
+    end
+  end
 end

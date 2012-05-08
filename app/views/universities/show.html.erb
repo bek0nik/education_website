@@ -57,22 +57,27 @@
 	}
 </script>
 <div style="clear:both;"></div>
-<div class="tabbable">
-  <ul class="nav nav-tab">
-    <li class="active"><a href="#1" data-toggle="tab">Описание</a></li>
-    <li class="advanced-li-tab"><a href="#2" data-toggle="tab">Спеңиалүности</a></li>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Описание</a></li>
+    <li><a href="#tabs-2">Специальности</a></li>
+    <li><a href="#tabs-3">Контакты</a></li>
   </ul>
-</div>
-<div class="tab-content">
-  <div class="tab-pane active" id="1">
-    <div id="university-description"><%= raw(@university.description) %></div>
+
+  <div id="tabs-1">
+    <%= raw(@university.description) %>
   </div>
-  <div class="tab-pane" id="2">
-    <div id="university-specialities">
+  <div id="tabs-2">
+    
       <% @university.specialities.each do |item| %>
         <%= link_to item.name, speciality_path(item) %>        
       <% end %>
-    </div>
+    
+  </div>
+  <div id="tabs-3">
+    
+      <p><%= @university.name %></p> 
+    
   </div>
 </div>
 

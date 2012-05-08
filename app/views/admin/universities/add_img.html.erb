@@ -1,6 +1,6 @@
 <%= form_for [:admin, @university], :html => {:multipart => true} do |f| %>
   <%= fields_for Image.new do |f| %>
-    <%= file_field :name, :rel => admin_university_images_path %>
+    <%= f.file_field :photo, :rel => admin_university_images_path(@university) %>
   <% end %>
-  <%= render :partial => 'images/photo', :collection => @university.images %>
-<% end -%>
+  <%= render :partial => 'admin/images/photo', :collection => @university.images %>
+<% end %>

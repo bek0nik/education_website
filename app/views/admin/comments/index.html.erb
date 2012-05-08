@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Текст комментария</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |c| %>
+    <tr>
+      <td><%= c.comment_text %></td>
+      <td>
+        <%= link_to edit_icon, edit_admin_comment_path(c)%>
+        <%= link_to delete_icon, admin_comment_path(c), method: :delete, confirm: "ВЫ уверены"  %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+
+  
+
+</table>

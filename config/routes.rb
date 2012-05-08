@@ -31,6 +31,7 @@ EducationWebsite::Application.routes.draw do
     match "admin" => "admin#index", :as => :admin
     namespace :admin do
       resources :cities
+      resources :comments
       resources :questions
       resources :test_names
       resources :universities do

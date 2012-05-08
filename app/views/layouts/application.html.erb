@@ -35,25 +35,38 @@
       <div id="contentwrap">
         <div class="clr"></div>
         <div id="body_area">
+          <%= flash[:notice] %>
           <%= yield %>
           
         </div>
         <div id="sidebar">
           <h3 id="social-title">Мы в ...</h3>
           <ul class="social">
-            <li class="img"><%= image_tag('facebook_32.png') %></li>
-            <li class="img"><%= image_tag('twitter_32.png') %></li>
-            <li class="img"><%= image_tag('google_32.png') %></li>
-            <li class="img"><%= image_tag('github_32.png') %></li>
-            <li class="img"><%= image_tag('myspace_32.png') %></li>
-            <li class="img"><%= image_tag('basecamp_32.png') %></li>
+            <li class="img"><%=link_to image_tag('facebook_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('twitter_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('google_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('github_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('myspace_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('basecamp_32.png'), "#" %></li>
           </ul>
-          <div id="popular-univer">
-            <% University.all.each do |u| %>
-              <%= u.name %> <br />
-            <% end %>
+          
+          <div class="tabbable">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#4" data-toogle="tab">Cсылки</a></li>
+              <li class="advanced-li-tab"><a href="#5" data-toogle="tab">Последнии комментарии</a></li>
+            </ul>
           </div>
-          <br /><b>Полезные ссылки</b>
+          <div class="tab-content">
+            <div class="tab-pane active" id="4">
+                <% @lastcom.each do |u| %>
+                  <%= truncate(u.comment_text, length: 10) %> <br />
+                <% end %>
+            </div>
+            <div class="tab-pane" id="5">
+              <p>jxcojvoixjoi</p>
+            </div>
+          </div>
+
           <div class="clr"></div>
         </div> 
         <div class="clr"></div>

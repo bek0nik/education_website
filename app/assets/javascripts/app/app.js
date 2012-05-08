@@ -15,9 +15,9 @@ $j(document).ready(function() {
     }
   });
 });
-$j(document).ready(function(){
-  $j('ul#photo-anim').cycleThru({delay: 2000});
-});
+//$j(document).ready(function(){
+//  $j('ul#photo-anim').cycleThru({delay: 2000});
+//});
 //validates login
 //$j(document).ready(function(){
 //  $j('#login').validate({
@@ -39,3 +39,19 @@ $j(document).ready(function(){
 //    }
 //  })
 //});
+
+$j(document).ready(function() {
+  $j('#speciality th a').live("click", function() {
+    $j.getScript(this.href);
+    return false;
+  });
+  
+  $j('#specialities_search input').keyup(function(){
+    $j.get($j("#specialities_search").attr("action"), $j("#specialities_search").serialize(), null, "script");
+    return false;
+  });
+});
+
+ $j(document).ready(function() {
+    $j("#tabs").tabs();
+  });

@@ -4,11 +4,7 @@ class Admin::UniversitiesController < ApplicationController
   layout 'admin'
   respond_to :html
   def index
-    @universities = University.all
-#    respond_to do |format|
-#      format.html
-#      format.json {render json: UniversitiesDatatable.new(view_context) }    
-#    end    
+    @universities = University.all   
   end
   
   def show

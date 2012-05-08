@@ -1,17 +1,29 @@
 <%= form_for([:admin,@speciality]) do |f| %>
+  <%= error_messages_for(@speciality) %>
   <fieldset>
     <legend><%= @speciality.legend_value %></legend>
     <div class="control-group">
       <%= f.label :name, "Название" %>
       <div class="controls"><%= f.text_field :name %></div>
     </div>
+    <div class="control-group">
+      <%= f.label :cipher, "Шифр" %>
+      <div class="controls">
+        <%= f.text_field :cipher %>        
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :category_id, "Категория" %>
+      <div class="controls"><%= f.collection_select :category_id, Category.ascname, :id, :name %></div>
+    </div>
     
     <div class="control-group">
       <%= f.label :description, "Описание"  %>
-      <div class="controls"><%= f.text_area :description %></div>
+      <div class="controls"><%= f.text_area :description, :class => "input-xlarge", :rows => 3 %></div>
     </div>
     <div class="form-actions">
-      <%= f.submit @speciality.button_value %>
+      <%= f.submit @speciality.button_value, :class => 'btn btn-primary' %>
+      <button type='reset' class="btn cancel-form">Отмена</button>
     </div>
     
   </fieldset>

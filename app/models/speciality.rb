@@ -1,5 +1,12 @@
 #encoding:UTF-8
 class Speciality < ActiveRecord::Base
+  has_many :categorizations
+  belongs_to :category
+  has_many :universities, :through => :categorizations, :uniq => true
+  validates :name, :cipher, :presence => true, :uniqueness => {:case_sensitive => false }
+  scope :ascname, order('name ASC')
+  #translations
+  translates :name, :description
   def button_value
     if new_record?
       "Добавить"
@@ -14,5 +21,13 @@ class Speciality < ActiveRecord::Base
     else
       "Изменение"      
     end    
+  end
+  
+  def self.search(search)
+    if search
+      where('name LIKE ? OR cipher LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      scoped
+    end 
   end
 end

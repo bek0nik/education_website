@@ -1,15 +1,26 @@
 <% flash.each do |name, msg| %>
   <%= msg %>
 <% end %>
+<div id="registration">
 <%= form_for(@user, :id => "signup") do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
   
+  <div class="field">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  </div>
+  
+  <div class="field">
   <%= f.label :password %>
   <%= f.password_field :password %>
+  </div>
   
+  <div class="field">
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
+  </div>
   
-  <%= f.submit "Сохранить" %>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
 <% end %>
+</div>

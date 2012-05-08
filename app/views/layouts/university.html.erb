@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EducationWebsite</title>
+  <%= favicon_link_tag %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrap">
+    <!--login-->
+    <%= render  'layouts/login' %>  
+    <!--end login-->
+    
+    <div id="page">
+      <div style="clear:both;"></div>
+      
+      <!--top-->
+      <div id="top">
+        <div id="logo"><%= link_to image_tag('logo.png'), root_path  %></div>
+        <div id="company_name">Сайт для абитуриентов</div>
+      </div>
+      <!--end top-->
+
+      <!--   menu -->
+      <%= render 'layouts/application/menu' %>
+      <!-- end menu -->  
+
+      <div id="contentwrap">
+        <div style="clear:both;"></div>
+        <div id="univer_area">
+          <%= yield %>
+        </div>
+
+      </div>
+  
+      <!-- footer -->
+      <%= render :partial => 'layouts/application/footer' %>
+      <!-- end footer -->
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+  <div id="menu">
+    <ul id="example-one">
+      <% if params[:locale] == "ru" %>
+      <li class="current_page_item"><%= link_to 'Главная', root_path %></li>
+      <li><%= link_to 'О нас' , about_path  %></li>
+      <li><%= link_to 'Тестирование', test_names_path %></li>
+      <li><%= link_to 'ВУЗЫ', universities_path %></li>
+      <li><%= link_to 'Специальности', specialities_path %></li>
+      <li></li>
+      <% else %>
+      <li class="current_page_item"><%= link_to 'Бас стр', root_path %></li>
+      <li><%= link_to 'Біз', about_path  %></li>
+      <li><%= link_to 'Тест бақылау', test_names_path %></li>
+      <li><%= link_to 'БҰҰ', universities_path %></li>
+      <li><%= link_to 'Мамандықтар', specialities_path %></li>
+      <li></li>
+      <% end %>
+    </ul>
+    <div id="search">
+      <%= form_tag sessions_path do %>
+        <%= text_field_tag :q, nil, :placeholder => "Поиск ..." %>
+        <%= submit_tag "", :id => 'submit-search' %>
+      <% end %>
+    </div>
+  </div>

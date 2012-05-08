@@ -1,34 +1,50 @@
 EducationWebsite::Application.routes.draw do
-
-  resources :specialities
-
-  resources :authentications
-  match '/auth/:provider/callback' => 'authentications#create' 
-  resources :universities
-
-  resources :users
-  resource :sessions
   
-  get "signup" => 'users#new', :as => :signup
-  get "login" => 'sessions#new', :as => :login
-  get "logout" => 'sessions#destroy', :as => :logout
 
-  resources :questions
-
-  resources :test_names do
-    get "start", :on => :member, :as => :start
-  end
-
-  get "pages/index"
-  match '/about' => 'pages#about', :as => :about
-  
-  match "admin" => "admin#index", :as => :admin
-  namespace :admin do
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do 
+    resources :comments
+    resources :cities
+    resources :images
+    resources :categories
+    resources :specialities
     resources :questions
-    resources :test_names
-    resources :universities
-    resources :specialities  
+    resources :universities do
+      post 'rate', :on => :member
+    end
+    
+    resources :authentications
+    match '/auth/:provider/callback' => 'authentications#create'
+    resources :users
+    resource :sessions
+    get "signup" => 'users#new', :as => :signup
+    get "login" => 'sessions#new', :as => :login
+    get "logout" => 'sessions#destroy', :as => :logout
+    resources :test_names do
+      get "start", :on => :member, :as => :start
+    end
+    get "pages/index"
+    match '/about' => 'pages#about', :as => :about
+    
+    root :to => 'pages#index'
+  
+  
+    match "admin" => "admin#index", :as => :admin
+    namespace :admin do
+      resources :cities
+      resources :comments
+      resources :questions
+      resources :test_names
+      resources :universities do
+        resources :images, :only => [:create, :destroy]
+        get "add_img", :on => :member, :as => :add_img
+          
+      end
+      resources :specialities
+      resources :categories  
+    end
   end
+  match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  match '', to: redirect("/#{I18n.default_locale}")
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -79,7 +95,7 @@ EducationWebsite::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-  root :to => 'pages#index'
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

@@ -1,0 +1,98 @@
+#uni-show{
+  padding-top: 9px;
+  #title{
+    font-style: italic;
+  }
+}
+#universities{
+  a{
+    color: #635a5a;
+  }
+}
+#univer-list{
+  
+  margin-bottom: 30px;
+  
+}S
+#univer-name{
+  a{
+    color: #bdbdbd;
+    font-family: italic;
+  }
+}
+#univer-photo{
+  float:left;
+  border-top: 2px solid #eae3e3;
+  border-right: 2px solid #eae3e3;
+  border-left: 2px solid #eae3e3;
+  margin-right: 3px;
+  margin-bottom: 20px;
+}
+#rating{
+  margin: 10px;
+}
+#comment-count{
+  font-size: 10px;
+  font-family: sans-serif;
+  font-style: oblique;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  color: #cdc6c6;
+  
+}
+#comments_count{
+  margin: 10px 0 10px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 11px;
+}
+#comments{
+  margin-bottom: 15px;
+}
+#comment{
+  border: 1px solid #e5e0e0;
+  margin: 3px;
+}
+#comment-form{
+  margin-left: 5px;
+  font-family: arial;
+  font-size:13px;
+.field{
+    margin-top:20px;
+    
+    label{
+      display:block;
+      margin-bottom:5px;
+      margin-right:20px;
+    }
+    textarea{
+      border:1px solid #ccc;
+      height:20px;
+      font-size:16px;
+      padding:4px;
+      color:#000;
+      width:400px;
+      height:180px;
+    }
+  }
+  .button{
+    margin-right:20%;
+    margin-top:10px;
+    margin-bottom:20px;
+  }
+}
+#university-description{
+  margin-top: 10px; 
+}
+#univer-desc{
+  font: 11px sans-serif;
+//   margin: 10px;
+//   padding: 0;
+//   border: 1px solid rgba(0,0,0,0.5);
+//   border-radius: 10px 10px 2px 2px;
+//   background: rgba(0,0,0,0.25);
+//   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+//   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+//   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+//   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+}

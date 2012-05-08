@@ -1,18 +1,24 @@
 <%= link_to 'Добавить ВУЗ', new_admin_university_path, :class => 'btn' %> <br/>
-<table class="table table-bordered">
+<table class="table table-bordered display">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Действия</th>
     </tr>
   </thead>
   <tbody>
   <% @universities.each do |u| %>
     <tr>
       <td><%= u.name %></td>
-      <td></td>
-      <td></td>
+      <td><%= truncate(strip_tags(u.description), :length => 300) %></td>
+      <td>
+        <div class="actions">
+          
+          <%= link_to edit_icon, edit_admin_university_path(u) %>
+          <%= link_to delete_icon, admin_university_path(u), :method => :delete, confirm: "Вы уверены?" %>
+        </div>
+      </td>
     </tr>
   <% end %>
   </tbody>

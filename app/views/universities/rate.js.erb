@@ -1,0 +1,9 @@
+$('.ajaxful-rating-wrapper').html("<%= escape_javascript(render(:partial => 'rating')) %>");
+$(function(){
+  $('.ajaxful-rating-wrapper').animate({
+    opacity: 0.3
+  }, 300);
+  $('.ajaxful-rating-wrapper').animate({
+    opacity: 1
+  }, 300);
+});

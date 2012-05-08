@@ -18,7 +18,7 @@ class Admin::SpecialitiesController < ApplicationController
   def create
     @speciality = Speciality.new(params[:speciality])
     if @speciality.save
-      flash[:notice] = "Successfully"
+      flash[:notice] = "Специальность создана!"
       respond_with(@speciality, location: admin_specialities_path)
     else
       render 'new'
@@ -28,7 +28,7 @@ class Admin::SpecialitiesController < ApplicationController
   def update
     @speciality = Speciality.find(params[:id])
     if @speciality.update_attributes(params[:speciality])
-      flash[:notice] = "Successfully"
+      flash[:notice] = "Специальность обновлена!"
       respond_with(@speciality, :location => admin_specialities_path)
     else
       render 'edit'      
@@ -38,7 +38,7 @@ class Admin::SpecialitiesController < ApplicationController
   def destroy
     @speciality = Speciality.find(params[:id])
     @speciality.destroy
-    flash[:notice] = "Successfully"
+    flash[:notice] = "Специальность удалена!"
     redirect_to admin_specialities_path    
   end
 end

@@ -1,0 +1,7 @@
+ru:
+  layouts:
+    application: 
+      about: "О нас"
+  pages:
+    index: 
+      title: "Добро пожаловать"

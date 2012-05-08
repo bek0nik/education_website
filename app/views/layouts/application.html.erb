@@ -5,57 +5,77 @@
   <%= favicon_link_tag %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= ajaxful_rating_style %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="wrap">
+  <div id="wrap">
+    <!--login-->
+    <%= render  'layouts/login' %>  
+    <!--end login-->
+    
+    <div id="page">
+      <div class="clr"></div>
+      
+      <!--top-->
+      <div id="top">
+        
+        <div id="company_name">Сайт для абитуриентов</div>
+        <div id="locale">
+        <%= link_to_unless_current "РУС", :locale => "ru" %>
+        <%= link_to_unless_current "ҚАЗ", :locale => "kz"  %>
+        </div>
+      </div>
+      <!--end top-->
 
-  <!--login-->
-  <%= render  'layouts/login' %>  
-  <!--end login-->
+      <!--   menu -->
+      <%= render 'layouts/application/menu' %>
+      <!-- end menu -->  
+
+      <div id="contentwrap">
+        <div class="clr"></div>
+        <div id="body_area">
+          <%= flash[:notice] %>
+          <%= yield %>
+          
+        </div>
+        <div id="sidebar">
+          <h3 id="social-title">Мы в ...</h3>
+          <ul class="social">
+            <li class="img"><%=link_to image_tag('facebook_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('twitter_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('google_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('github_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('myspace_32.png'), "#" %></li>
+            <li class="img"><%=link_to image_tag('basecamp_32.png'), "#" %></li>
+          </ul>
+          
+          <div class="tabbable">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#4" data-toogle="tab">Cсылки</a></li>
+              <li class="advanced-li-tab"><a href="#5" data-toogle="tab">Последнии комментарии</a></li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" id="4">
+                <% @lastcom.each do |u| %>
+                  <%= truncate(u.comment_text, length: 10) %> <br />
+                <% end %>
+            </div>
+            <div class="tab-pane" id="5">
+              <p>jxcojvoixjoi</p>
+            </div>
+          </div>
+
+          <div class="clr"></div>
+        </div> 
+        <div class="clr"></div>
+      </div>
   
-  <div id="page">
-  <!--top-->
-  <div id="top">
-    <div id="logo"><%= link_to image_tag('logo.png'), root_path  %></div>
-    <div id="company_name">Сайт для абитуриентов</div>
-  </div>
-  <!--end top-->
-  
-  <div id="menu">
-    <ul id="example-one">
-      <li class="current_page_item"><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'О нас', about_path  %></li>
-      <li><%= link_to 'Тестирование', test_names_path %></li>
-      <li><%= link_to 'ВУЗЫ', universities_path %></li>
-      <li></li>
-    </ul>
-    <div id="search">
-      <%= form_tag sessions_path do %>
-        <%= text_field_tag :q, nil %>
-        <%= submit_tag "", :id => 'submit-search' %>
-      <% end %>
+      <!-- footer -->
+      <%= render :partial => 'layouts/application/footer' %>
+      <!-- end footer -->
     </div>
   </div>
-  
-<!--   <div id="header">
-  <div id="intro">Выпускной класс... Позади годы, проведенные в школе, впереди - взрослая жизнь. И для многих выпускников один из первых шагов в этой жизни - поступление в ВУЗ. Университеты, институты, академии - как выбрать из множества ВУЗов именно тот, который нужен тебе? На какую специальность поступать учиться? Но для поступления в ВУЗ недостаточно только желания ! Необходимо еще иметь достаточно высокий уровень знаний, позволяющий поступить в выбранный университет или академию. </div>
-
-</div> -->
-  <div id="contentwrap">
-    <div id="body_area">
-      <%= yield %>
-    </div> 
-  </div>
-</div>
-</div>
-
-
-<div id="footer">
-	<div id="bottom_menu"><a href="#">Главная</a> |  <a href="#">О нас</a> |  <a href="#">Тестирование</a> |  <a href="#">ссылка4</a> |  <a href="#">ссылка5</a> |  <a href="#">ссылка6</a></div>
-	<div id="bottom_addr">© 2012. All Rights Reserved</div>
-</div>
-
-
 </body>
 </html>

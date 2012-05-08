@@ -1,4 +1,5 @@
-<%= form_for [:admin,@university] do |f| %>
+<%= nested_form_for [:admin,@university], :html => { :multipart => true, :class => 'form well'} do |f| %>
+  <%= error_messages_for(@university) %>
   <fieldset>
   <legend><%= @university.legend_value %></legend>
   <div class="control-group">
@@ -7,12 +8,42 @@
       <%= f.text_field :name %>
     </div>
   </div>
+  <ul id="list-images">
+  <%= f.fields_for :images do |i| %>
+    <li id="list-image">
+    <p id="photo-form"><%= image_tag(i.object.photo.url(:thumb)) if i.object.photo? %></p>
+    <p id="photo-input">
+    <%= i.file_field :photo, :class => 'input-file' %>
+    </p>
+    <p id="photo-logo">
+      <%= i.check_box :logo %>
+    </p>
+    <%= i.hidden_field :photo_cache %>
+    <p class="photo-description">
+      <%= i.label :description, "Комментарий фото" %>
+      <%= i.text_field :description %>
+    </p>
+    <p id="photo-actions">   
+      <%= i.link_to_remove "Удалить" %>
+    </p>
+    </li>
+  <% end %><div class="clr"></div>
+  <%= f.link_to_add "Добавить", :images, :id => "add-buuton", :class => "btn" %>
+  </ul>
+  <div class="clr"></div>
   <div class="control-group">
-    <%= f.label :description, "Описание" %>
+    <%= f.label :description, "Описание заведения" %>
     <div class="controls">
-      <%= f.text_area :description, :rows => 12 %>
+      <%= f.text_area :description,  :id => "tinymce", :rows => 10, :cols =>20 %>
     </div>
   </div>
+  <%= hidden_field_tag "university[speciality_ids][]", nil %>
+  <% Speciality.ascname.each do |speciality| %>
+  <div class="control-group">
+     <%= label_tag speciality.name %>  
+    <div class="controls"><%= check_box_tag "university[speciality_ids][]", speciality.id, @university.speciality_ids.include?(speciality.id) %></div> 
+  </div>
+  <% end %>
   <div class="form-actions">
     <%= f.submit @university.button_value, :class =>'btn btn-primary' %>
     <button type='reset' class="btn cancel-form">Отмена</button>
@@ -20,3 +51,9 @@
   
   </fieldset>
 <% end %>
+<script type="text/javascript">
+  tinyMCE.init({
+    mode: 'textareas',
+    theme: 'advanced'
+  });
+</script>

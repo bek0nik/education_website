@@ -57,32 +57,29 @@
 	}
 </script>
 <div style="clear:both;"></div>
-<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1">Описание</a></li>
-    <li><a href="#tabs-2">Специальности</a></li>
-    <li><a href="#tabs-3">Контакты</a></li>
+<div class="fade">
+  <ul class="tabs">
+    <li><a href="#item1">Описание</a></li>
+    <li><a href="#item2">Специальности</a></li>
+    <li><a href="#item3">Контакты</a></li>
   </ul>
-
-  <div id="tabs-1">
+  <div class="items">
+    <div id="item1">
     <%= raw(@university.description) %>
-  </div>
-  <div id="tabs-2">
-    
+    </div>
+    <div id="item2">
       <% @university.specialities.each do |item| %>
         <%= link_to item.name, speciality_path(item) %>        
-      <% end %>
-    
-  </div>
-  <div id="tabs-3">
-    
-      <p><%= @university.name %></p> 
-    
+      <% end %>   
+    </div>
+    <div id="item3">
+      <p><%= @university.name %></p>    
+    </div>
   </div>
 </div>
+<script type="text/javascript">
 
-
-
+</script>
 
 </div>
 <%= render 'rating' %>

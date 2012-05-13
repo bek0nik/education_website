@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', ' 1.3.3', :group => :development
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -52,7 +52,6 @@ gem "omniauth-mailru", "~> 1.0.0"
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :test, :development do
-  #gem 'mysql2'
   gem "rspec", "~> 2.8.0"
   gem "rspec-rails", "~> 2.8.1"
   gem "magic_encoding", "~> 0.0.2"

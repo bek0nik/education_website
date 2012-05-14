@@ -56,33 +56,34 @@
 		slideshow.init("slideshow","image","imgprev","imgnext","imglink");
 	}
 </script>
-<div style="clear:both;"></div>
-<div class="fade">
-  <ul class="tabs">
-    <li><a href="#item1">Описание</a></li>
-    <li><a href="#item2">Специальности</a></li>
-    <li><a href="#item3">Контакты</a></li>
-  </ul>
-  <div class="items">
-    <div id="item1">
-    <%= raw(@university.description) %>
-    </div>
-    <div id="item2">
-      <% @university.specialities.each do |item| %>
-        <%= link_to item.name, speciality_path(item) %>        
-      <% end %>   
-    </div>
-    <div id="item3">
-      <p><%= @university.name %></p>    
+  <div style="clear:both;"></div>
+  <div class="idTabs">
+    <ul>
+      <li><a href="#item1">Описание</a></li>
+      <li><a href="#item2">Специальности</a></li>
+      <li><a href="#item3">Контакты</a></li>
+    </ul>
+    <div style="clear:both;"></div>
+    <div class="items">
+      <div id="item1">
+        <%= raw(@university.description) %>
+      </div>
+      <div id="item2">
+        <% @specialities.each do |item| %>
+        <div id="university-specialities">
+          <%= link_to item.name, speciality_path(item) %>
+          <%= item.category_id %>        
+        </div>
+        <% end %>   
+      </div>
+      <div id="item3">
+        <p><%= @university.address %></p>    
+      </div>
     </div>
   </div>
 </div>
-<script type="text/javascript">
 
-</script>
-
-</div>
-
+<div style="clear:both;"></div>
 <%= render 'rating' %>
 <%= render :partial => 'comments/comments' %>
 <% if user_has? %> 

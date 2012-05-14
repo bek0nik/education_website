@@ -9,6 +9,7 @@ class UniversitiesController < ApplicationController
   
   def show 
     @university = University.find(params[:id])
+    @specialities = @university.specialities.all
     @comment = Comment.new
     @img = @university.images.all    
   end

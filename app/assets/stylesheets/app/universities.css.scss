@@ -48,10 +48,27 @@
 }
 #comments{
   margin-bottom: 15px;
-}
-#comment{
-  border: 1px solid #e5e0e0;
-  margin: 3px;
+  #comment{
+    border-bottom: 1px solid #e5e0e0;
+    margin: 3px;
+    margin-top: 10px;
+    #user-comment{
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 11px;
+    }
+    #time-comment{
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: italic;
+      font-size: 11px;
+      padding-top: 3px;      
+    }
+    #comment-text{
+      font-style: none;
+      margin-top: 10px;
+    }
+  }
 }
 #comment-form{
   margin-left: 5px;
@@ -96,3 +113,87 @@
 //   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
 //   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
 }
+
+
+
+//.fade { 
+//  width:600px;
+//  margin:20px auto; 
+//  background:#fff; 
+//  padding:12px; 
+//  overflow:hidden; 
+//}
+//.fade .tabs { float:left; overflow:auto; }
+//.fade .tabs li {
+//  float:left; 
+//  list-style:none; 
+//  border:none; margin:2px; 
+//  -moz-border-radius:2px;
+//   -webkit-border-radius:2px;
+////  -moz-border-radius:8px;
+//  border-radius:2px;
+//  -o-border-radius:2px;
+//  }
+//.fade .tabs li a { 
+//  display:block; float:left; width:auto; height:16px; text-align:center; color:#000;
+//  text-decoration:none; font:bold 10pt Verdana; background:#CCC; border:none; }
+//.fade .tabs li:hover { margin:2px; border-width:0px; }
+//.fade .tabs li a.selected { border-color:#fff; font: italic 17px; background-color: #2ebe1d; }
+//.fade .items { 
+//  clear:both; 
+//  padding:6px 0; 
+//  position:relative; 
+//  top:0; 
+//  left:0; 
+//  height: auto; 
+//}
+//.fade .items div { 
+//  display:none; 
+//  position:relative; 
+//  top:0; 
+//  left:0; 
+//  padding-top:6px; 
+////  height: auto; 
+//}
+
+
+.idTabs { margin:40px; }
+      .idTabs ul { background:#222; padding:5px; float:left; }
+      .idTabs li { 
+        list-style:none; 
+        /*Try deleting this float*/ 
+        float:left; 
+        }
+      .idTabs a { 
+        display:block; 
+        background:#222; 
+        color:snow; 
+        padding:0 13px; 
+        font:bold 15pt Arial; 
+        text-decoration:none; 
+      }
+      .idTabs a.selected { 
+        background:#FFF; 
+        color:#000; 
+      }
+      .items>div { 
+        display:none; 
+        float:left; 
+        margin:0.9em 0 0 0.5em; 
+      }
+      .idTabs ul, .idTabs a { 
+        border-radius:4px; 
+        -moz-border-radius:4px; 
+        -webkit-border-radius:4px;
+        -o-border-radius:4px;
+      }
+      #university-specialities{
+        display: block;
+        a{
+          display: block;
+          text-decoration: none;
+          font: normal 13px Arial;
+          background: #fafafa;
+          color: #222;
+        }
+      }

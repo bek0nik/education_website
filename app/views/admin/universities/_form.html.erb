@@ -37,6 +37,10 @@
       <%= f.text_area :description,  :id => "tinymce", :rows => 10, :cols =>20 %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :address, "Адрес" %>
+    <div class="controls"><%= f.text_field :address %></div>
+  </div>
   <%= hidden_field_tag "university[speciality_ids][]", nil %>
   <% Speciality.ascname.each do |speciality| %>
   <div class="control-group">

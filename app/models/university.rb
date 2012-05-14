@@ -29,8 +29,8 @@ class University < ActiveRecord::Base
     end
   end
   
-  def self.rating
-    @uni = Rate.where(:rateable_type => "University").limit(3)
-    @pop = University.where(:id => @uni.rateable_id)
-  end
+#  def self.rating
+#    @uni = Rate.where(:rateable_type => "University").limit(3)
+#    @pop = University.where(:id => @uni.rateable_id)
+#  end
 end

@@ -18,7 +18,6 @@
       <%= link_to 'Админка', admin_path, :class => 'brand'  %>
       <div class="nav-collapse in">
         <ul class="nav">
-          <li><%= link_to 'Главная', admin_path  %></li>
           <li><%= link_to 'Тесты', admin_test_names_path  %></li>
           <li><%= link_to 'Вопросы', admin_questions_path  %></li>
           <li><%= link_to 'ВУЗЫ', admin_universities_path %></li>
@@ -36,14 +35,17 @@
   <div class="container">
     <div class="row">
       <div class="span1">
-        <ul class="nav">
+        <ul class="nav" id="locale">
         <li><%= link_to_unless_current image_tag('ru.png', :size => "29x24"), :locale => "ru" %></li>
-        <li><%= link_to_unless_current image_tag('kz.jpg', :size => "29x24"), :locale => "kz"  %></li>
+        <li><%= link_to_unless_current image_tag('kz.png', :size => "29x24"), :locale => "kz"  %></li>
         </ul>
       </div>
     </div>
     <div class="row">
-      <div class="span12"><%= flash_msg(flash[:notice]) %><%= yield %></div>
+      <div class="span12">
+        <%= flash_msg(flash[:notice]) %>
+        <%= yield %>
+      </div>
     </div>
   <div class="row">
     <div class="span12"><address>Copyright 2012</address></div>

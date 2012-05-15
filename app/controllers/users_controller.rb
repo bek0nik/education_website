@@ -9,10 +9,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "Регистрация завершена"
       redirect_to root_path
     else
-      flash[:notice] = "error"
+      flash[:notice] = "Ошибка!"
       render 'new'      
     end    
   end

@@ -9,7 +9,8 @@ class UniversitiesController < ApplicationController
   
   def show 
     @university = University.find(params[:id])
-    @specialities = @university.specialities.all
+    @specialities_id = @university.speciality_ids
+    @specialities = Speciality.where(:id => @specialities_id)     
     @comment = Comment.new
     @img = @university.images.all    
   end

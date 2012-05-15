@@ -39,3 +39,17 @@
 div.clr{
   clear:both;
 }
+#locale{
+  li{
+    display: inline;
+  }
+  a{
+  
+  }
+  a:hover{
+    background: none;
+  }
+  a.selected{
+    background: #eda232;
+  }
+}

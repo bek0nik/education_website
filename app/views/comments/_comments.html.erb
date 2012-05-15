@@ -2,9 +2,15 @@
 <div id="comments">
 <% @university.comments.each do |c| %>
   <div id="comment">
-  <%= c.user.email %>
-  <%= to_datetime(c.updated_at) %>
-  <%= raw(c.comment_text) %>
+    <div id="user-comment">
+      <%= c.user.email %>
+    </div>
+    <div id="time-comment">
+      <%= to_datetime(c.updated_at) %>
+    </div>
+    <div id="comment-text">
+      <%= raw(c.comment_text) %>
+    </div>
   </div>
 <% end %>
 </div>

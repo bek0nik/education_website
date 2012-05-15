@@ -9,7 +9,7 @@ class University < ActiveRecord::Base
   validates :name, presence: true
   validates :description, :presence => true
   # translations
-  translates :name, :description
+  translates :name, :description, :address
   #rate
   ajaxful_rateable :stars => 10, :dimensions => [:all], :cache_column => :rating_average
   #ajaxful_rateable :stars => 10, :dimensions => [:all]
@@ -29,8 +29,8 @@ class University < ActiveRecord::Base
     end
   end
   
-  def self.rating
-    @uni = Rate.where(:rateable_type => "University").limit(3)
-    @pop = University.where(:id => @uni.rateable_id)
-  end
+#  def self.rating
+#    @uni = Rate.where(:rateable_type => "University").limit(3)
+#    @pop = University.where(:id => @uni.rateable_id)
+#  end
 end

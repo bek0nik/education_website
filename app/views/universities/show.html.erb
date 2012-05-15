@@ -71,8 +71,9 @@
       <div id="item2">
         <% @specialities.each do |item| %>
         <div id="university-specialities">
+          <%= item.category.name %>
           <%= link_to item.name, speciality_path(item) %>
-          <%= item.category_id %>        
+                  
         </div>
         <% end %>   
       </div>

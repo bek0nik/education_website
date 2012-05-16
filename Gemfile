@@ -42,7 +42,9 @@ gem "omniauth-mailru", "~> 1.0.0"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-
+gem 'heroku'
+ gem 'pg', :group => :production
+  gem 'therubyracer', :group => :production
 # Use unicorn as the web server
 # gem 'unicorn'
 

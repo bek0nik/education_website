@@ -56,8 +56,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    daemons (1.1.8)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    eventmachine (0.12.10)
     execjs (1.3.0)
       multi_json (~> 1.0)
     factory_girl (2.5.2)
@@ -74,6 +76,11 @@ GEM
       activerecord (>= 3.0.0)
       paper_trail (~> 2)
     hashie (1.2.0)
+    heroku (2.25.0)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.1)
+      rest-client (~> 1.6.1)
+      rubyzip
     hike (1.2.1)
     httpauth (0.1)
     i18n (0.6.0)
@@ -89,6 +96,9 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    launchy (2.1.0)
+      addressable (~> 2.2.6)
+    libv8 (3.3.10.4)
     localtunnel (0.3)
       json (>= 1.2.4)
       net-ssh (>= 2.0.22)
@@ -108,6 +118,7 @@ GEM
     net-ssh (2.3.0)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    netrc (0.7.1)
     oauth2 (0.6.0)
       faraday (~> 0.7)
       httpauth (~> 0.1)
@@ -130,6 +141,7 @@ GEM
     paper_trail (2.6.3)
       activerecord (~> 3.0)
       railties (~> 3.0)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -156,6 +168,8 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -169,6 +183,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
+    rubyzip (0.9.8)
     sass (3.1.15)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -179,6 +194,12 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     subexec (0.2.1)
+    therubyracer (0.10.1)
+      libv8 (~> 3.3.10)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.14.6)
     tilt (1.3.3)
     tinymce-rails (3.4.9)
@@ -201,6 +222,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   globalize3 (~> 0.2.0)
+  heroku
   jquery-datatables-rails!
   jquery-rails
   jquery-ui-rails
@@ -213,9 +235,12 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-mailru (~> 1.0.0)
   omniauth-vkontakte (~> 1.0.6)
+  pg
   rails (= 3.2.1)
   rspec (~> 2.8.0)
   rspec-rails (~> 2.8.1)
   sass-rails (~> 3.2.3)
+  therubyracer
+  thin
   tinymce-rails (~> 3.4.9)
   uglifier (>= 1.0.3)

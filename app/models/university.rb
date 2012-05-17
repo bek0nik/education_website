@@ -9,7 +9,7 @@ class University < ActiveRecord::Base
   validates :name, presence: true
   validates :description, :presence => true
   # translations
-  translates :name, :description, :address
+  translates :name, :description#, :address
   #rate
   ajaxful_rateable :stars => 10, :dimensions => [:all], :cache_column => :rating_average
   #ajaxful_rateable :stars => 10, :dimensions => [:all]

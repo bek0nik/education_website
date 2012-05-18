@@ -29,12 +29,29 @@ div.clr{clear:both;}
 
 ul{margin:0 0 0 20px;padding:0;list-style-type: square;line-height: 16px;}*/
 
-h1{font-size:20px;font-weight:normal;color:#000;margin:5px 0 10px;}
-h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
-
-#wrap{position:relative; min-height:100%; margin:0 auto; width:100%;}
-#page{width:990px;margin:0 auto; padding-bottom:70px;}
-
+h1{
+  font-size:20px;
+  font-weight:normal;
+  color:#000;
+  margin:5px 0 10px;
+}
+h2{
+  font-size:16px;
+  font-weight:normal;
+  color:#000;
+  margin:2px 0 7px;
+}
+#wrap{
+  position:relative; 
+  min-height:100%; 
+  margin:0 auto; 
+  width:100%;
+}
+#page{
+  width:990px;
+  margin:0 auto; 
+  padding-bottom:70px;
+}
 #top{
   height:81px;
   margin: 0 auto; 
@@ -101,7 +118,14 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
     a:hover { color: white; }
   }
 }
-#magic-line { position: absolute; bottom: -2px; left: 0; width: 100px; height: 2px; background: #fe4902; }
+#magic-line { 
+  position: absolute; 
+  bottom: -2px; 
+  left: 0; 
+  width: 100px; 
+  height: 2px; 
+  background: #fe4902; 
+}
 /*search*/
 #search {
   float:right;
@@ -175,11 +199,11 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
 	#sidebar{
 	  border-top-right-radius: 8px;
 	  border-bottom-right-radius: 8px;
-	    -moz-border-radius-topright: 8px;
-	    -moz-border-radius-bottomright: 8px;
-	    -webkit-border-top-right-radius:8px;
-	    -webkit-border-bottom-right-radius:8px;
-	    -o-border-radius: 8px;
+	  -moz-border-radius-topright: 8px;
+	  -moz-border-radius-bottomright: 8px;
+	  -webkit-border-top-right-radius:8px;
+	  -webkit-border-bottom-right-radius:8px;
+	  -o-border-radius: 8px;
 	  float:left;
 	  background: #f1f1f1 no-repeat scroll 0 0;
 	  height: auto;
@@ -201,12 +225,10 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
 	    li{
 	      background-repeat: no-repeat;
 	      display: inline;
-	      float: left;
-	    
+	      float: left;  
 	    }
 	    .facebook{
 	      background: url('facebook_32.png') no-repeat;
-	      
 	    }
 	    .img{
 	      padding-right: 11px;
@@ -214,7 +236,11 @@ h2{font-size:16px;font-weight:normal;color:#000;margin:2px 0 7px;}
 	  }
 	}
 }
-#login_form{height: 20px;width: 150px;font-size: 12px;}
+#login_form{
+  height: 20px;
+  width: 150px;
+  font-size: 12px;
+}
 
 /*footer*/
 #footer{

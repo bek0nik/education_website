@@ -50,23 +50,18 @@
             <li class="img"><%=link_to image_tag('basecamp_32.png'), "#" %></li>
           </ul>
           
-          <div class="tabbable">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#4" data-toogle="tab">Cсылки</a></li>
-              <li class="advanced-li-tab"><a href="#5" data-toogle="tab">Последнии комментарии</a></li>
+          <div class="idTabs">
+            <ul>
+              <li><a href="#4">Cсылки</a></li>
+              <li><a href="#5">Последнии комментарии</a></li>
             </ul>
-          </div>
-          <div class="tab-content">
-            <div class="tab-pane active" id="4">
-                <% @lastcom.each do |u| %>
+            <div class="items">
+              <div id="4"></div>
+              <div id="5"><% @lastcom.each do |u| %>
                   <%= truncate(u.comment_text, length: 10) %> <br />
-                <% end %>
-            </div>
-            <div class="tab-pane" id="5">
-              <p>jxcojvoixjoi</p>
+                <% end %></div>
             </div>
           </div>
-
           <div class="clr"></div>
         </div> 
         <div class="clr"></div>

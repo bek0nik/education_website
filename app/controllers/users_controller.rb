@@ -1,7 +1,7 @@
 #encoding:UTF-8
 class UsersController < ApplicationController
   respond_to :html
-  
+  layout 'testing', only: :show
   def new
     @user = User.new    
   end
@@ -16,5 +16,9 @@ class UsersController < ApplicationController
       flash[:notice] = "Ошибка!"
       render 'new'      
     end    
+  end
+  
+  def show
+    @user = User.find(current_user.id)    
   end
 end

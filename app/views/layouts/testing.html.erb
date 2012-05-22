@@ -13,12 +13,14 @@
   </div>
 </div> -->
  <ul class="nav nav-pills pull-right">
-  <li><%= link_to 'Профиль', "#"  %></li>
-  <li class="active"><%= link_to 'Список тестов',"#"  %></li>
+  <li><%= link_to 'Профиль', user_path(current_user)  %></li>
+  <li><%= link_to 'Cтатистика', "#"  %></li>
+  <li class="active"><%= link_to 'Список тестов', test_names_path %></li>
   <li><%= link_to 'Выход', root_path  %></li>
 </ul>
 
 <div class="row">
+  <%= flash_msg(flash[:notice]) %>
   <div class="span12"><%= yield %></div>
 </div>
 

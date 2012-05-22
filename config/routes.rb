@@ -1,6 +1,8 @@
 EducationWebsite::Application.routes.draw do
   
 
+  resources :reports
+
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do 
     resources :comments
     resources :cities

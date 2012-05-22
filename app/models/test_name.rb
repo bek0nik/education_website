@@ -24,4 +24,8 @@ class TestName < ActiveRecord::Base
   def last_step?
     current_step == steps.last    
   end
+  
+  def result
+    puts self.id    
+  end
 end

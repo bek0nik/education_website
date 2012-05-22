@@ -2,17 +2,20 @@
 class TestNamesController < ApplicationController
   respond_to :html
   layout 'testing'
+  before_filter :test_deny 
    
   def index
     @tests = TestName.all
   end
   
   def show
+    @test = TestName.find(params[:id])
+    question = Hash.new(@test.questions.all.sample(30))
+    @q = question.keys
   end
   
   def start
-    @test = TestName.find(params[:id])
-    @question = @test.questions.all.sample(30)
+    @question = question
     session[:test_step].deep_merge!(params[:f]) if params[:f]
     @test.current_step = session[:test_step]
     if params[:back_button]

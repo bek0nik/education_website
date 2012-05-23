@@ -12,7 +12,7 @@ class TestNamesController < ApplicationController
     @test = TestName.find(params[:id])
     question = Hash.new(@test.questions.all.sample(30))
     @question = @test.questions.all.sample(30)
-    render :action => :start
+    #render :action => :start
   end
   
   def start
@@ -22,11 +22,10 @@ class TestNamesController < ApplicationController
     @test.current_step = session[:test_step]
     if params[:back_button]
       @test.previous_step
-    else 
-      @test.next_step
-      if @test.last_step?
-        @test.result        
-      end      
+    elsif @test.last_step? 
+      @test.result
+    else
+      @test.next_step   
     end
     session[:test_step] = @test.current_step       
   end

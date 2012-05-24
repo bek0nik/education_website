@@ -5,7 +5,7 @@ class Admin::QuestionsController < ApplicationController
   
   def show
     @test = Testname.find(params[:id])
-    @question = @test.question.all    
+    @question = @test.questions.all    
   end
   
   def index

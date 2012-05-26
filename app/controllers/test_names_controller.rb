@@ -10,25 +10,26 @@ class TestNamesController < ApplicationController
   
   def show
     @test = TestName.find(params[:id])
-    question = Hash.new(@test.questions.all.sample(25))
-    @question = @test.questions.limit(25)
+#    question = Hash.new(@test.questions.all.sample(25))
+#    @question = @test.questions.limit(25)
     #render :action => :start
-    session[:test_step] = nil
+#    session[:test_step] = nil
   end
   
   def start
     @test = TestName.find(params[:id])
-    @question = @test.questions.limit(25)
-    session[:test_step].deep_merge!(params[:f]) if params[:f]
-    @test.current_step = session[:test_step]
-    if params[:back_button]
-      @test.previous_step
-    elsif @test.last_step? 
-      @test.result
-    else
-      @test.next_step   
-    end
-    session[:test_step] = @test.current_step       
+    @question = @test.questions.all.sample(5)
+#    @question = @test.questions.limit(25)
+#    session[:test_step].deep_merge!(params[:f]) if params[:f]
+#    @test.current_step = session[:test_step]
+#    if params[:back_button]
+#      @test.previous_step
+#    elsif @test.last_step? 
+#      @test.result
+#    else
+#      @test.next_step   
+#    end
+#    session[:test_step] = @test.current_step       
   end
 
 end

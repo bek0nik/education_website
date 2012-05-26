@@ -1,0 +1,9 @@
+<div id="test-online">
+<%= form_tag(start_test_name_path, :method => 'get')   do |f| %>
+  <div id="question-part">
+    <%= render "#{@test.current_step}_step", :f => f %>  
+    <%= submit_tag "Предыдущий", :class => 'btn', :name => "back_button" unless @test.first_step? %>
+    <%= submit_tag "Следующий", :class => 'btn', :name => "next_button" %>   
+  </div>  
+<% end %>
+</div>

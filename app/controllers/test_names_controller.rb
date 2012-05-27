@@ -19,6 +19,11 @@ class TestNamesController < ApplicationController
   def start
     @test = TestName.find(params[:id])
     @question = @test.questions.all.sample(5)
+    if @question[1..5] == params[:checked]
+      flash[:notice] = "Successfully"
+    else
+      flash[:notice] = "error"     
+    end
 #    @question = @test.questions.limit(25)
 #    session[:test_step].deep_merge!(params[:f]) if params[:f]
 #    @test.current_step = session[:test_step]

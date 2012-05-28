@@ -20,15 +20,15 @@ class TestNamesController < ApplicationController
     @test = TestName.find(params[:id])
     @question = @test.questions.all.sample(5)
     counter = 0
-    @question.each { |q| 
-      if q.correct == params[:correct]
+#    @question.each_index { |q| 
+      if params[:correct]
         counter += 1  
       else
         counter += 0 
       end
-      }
+#      }
     counter
-#    @result = Report.create(:user_id => current_user.id, :test_name_id => @test.id, :result => counter, :finished => Time.now)
+    @result = Report.create(:user_id => current_user.id, :test_name_id => @test.id, :result => counter, :finished => Time.now)
 #    if @result.save
 #      render "reports/result"      
 #    end

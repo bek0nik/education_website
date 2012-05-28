@@ -1,0 +1,6 @@
+<%= form_tag(reports_path, :method => 'get')  do %>
+  <%= label_tag :period, "Период" %>
+  <%= select_tag :period, options_for_select(ApplicationHelper::PERIOD) %>
+  <%= label_tag :question, "Дисциплина" %>
+  <%= submit_tag "Построить диаграмму", :class => 'btn' %>
+<% end %>

@@ -1,12 +1,15 @@
 EducationWebsite::Application.routes.draw do
   
 
-  resources :reports
+  
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do 
     resources :comments
     resources :cities
     resources :images
+    resources :reports do
+      get "otchet", :on => :collection, :as => :otchet
+    end
     resources :categories
     resources :specialities
     resources :questions

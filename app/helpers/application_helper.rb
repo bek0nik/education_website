@@ -1,3 +1,4 @@
+#encoding:UTF-8
 module ApplicationHelper
   
   def edit_icon
@@ -34,4 +35,7 @@ module ApplicationHelper
     direction = (column == sort_column && sort_direction == "asc") ? "desc" : "asc"
     link_to title, params.merge(:sort => column, :direction => direction, :page => nil)#, :class => css_class
   end
+  
+  #reports
+  PERIOD = ["Неделя", "Месяц", "Полгода", "Год"]
 end

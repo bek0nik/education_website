@@ -1,33 +1,34 @@
-<%= form_tag(start_test_name_path, :method => 'get') do %>
-  
+<%= form_tag(start_test_name_path, :method => 'get', :class => 'form') do %>
+<fieldset> 
 <% @question.each do |q| %>
-  <%= q.title %> <br />
-  <div class="controls">
+  <p class="testing"><%= q.title %></p>
+  <div class="controls testing">
   <label class="radio">
-  <%= radio_button_tag q.id, q.variant_1 %>
+  <%= radio_button_tag q.id, q.variant_1, params[:fail] %>
   <%= label_tag q.variant_1 %>
   </label>
   
   <label class="radio">
-  <%= radio_button_tag q.id, q.variant_2 %>
+  <%= radio_button_tag q.id, q.variant_2, params[:fail] %>
   <%= label_tag q.variant_2 %>
   </label>
   
   <label class="radio">
-  <%= radio_button_tag q.id, q.variant_3 %>
+  <%= radio_button_tag q.id, q.variant_3, params[:fail] %>
   <%= label_tag q.variant_3 %>
   </label>
   
   <label class="radio">
-  <%= radio_button_tag q.id, q.variant_4 %>
+  <%= radio_button_tag q.id, q.variant_4, params[:fail] %>
   <%= label_tag q.variant_4 %>
   </label>
   
   <label class="radio">
-  <%= radio_button_tag q.id, q.correct, params[:checked] %>
+  <%= radio_button_tag q.id, q.correct, params[:correct] %>
   <%= label_tag q.correct %>
   </label>
   </div><br />
 <% end %>
   <%= submit_tag "Закончить" %>
+  </fieldset>
 <% end %>

@@ -19,11 +19,22 @@ class TestNamesController < ApplicationController
   def start
     @test = TestName.find(params[:id])
     @question = @test.questions.all.sample(5)
-    if @question[1..5] == params[:checked]
-      flash[:notice] = "Successfully"
-    else
-      flash[:notice] = "error"     
-    end
+    counter = 0
+    @question.each { |q| 
+      if q.correct == params[:correct]
+        counter = counter + 1 
+        flash[:notice] = "Successfully" 
+      else
+        counter = counter + 0 
+#        render :action => :index
+      end
+      }
+    Report.create(:user_id => current_user.id, :test_name_id => @test.id, :result => counter, :finished => Time.now)   
+#    if @question[1..5] == params[:correct]
+#      flash[:notice] = "Successfully"
+#    elsif  == params[:fail]
+#      flash[:notice] = "error"     
+#    end
 #    @question = @test.questions.limit(25)
 #    session[:test_step].deep_merge!(params[:f]) if params[:f]
 #    @test.current_step = session[:test_step]

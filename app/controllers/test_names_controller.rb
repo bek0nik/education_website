@@ -22,14 +22,17 @@ class TestNamesController < ApplicationController
     counter = 0
     @question.each { |q| 
       if q.correct == params[:correct]
-        counter = counter + 1 
-        flash[:notice] = "Successfully" 
+        counter += 1  
       else
-        counter = counter + 0 
-#        render :action => :index
+        counter += 0 
       end
       }
-    Report.create(:user_id => current_user.id, :test_name_id => @test.id, :result => counter, :finished => Time.now)   
+    counter
+#    @result = Report.create(:user_id => current_user.id, :test_name_id => @test.id, :result => counter, :finished => Time.now)
+#    if @result.save
+#      render "reports/result"      
+#    end
+    
 #    if @question[1..5] == params[:correct]
 #      flash[:notice] = "Successfully"
 #    elsif  == params[:fail]
@@ -47,5 +50,5 @@ class TestNamesController < ApplicationController
 #    end
 #    session[:test_step] = @test.current_step       
   end
-
+  private
 end

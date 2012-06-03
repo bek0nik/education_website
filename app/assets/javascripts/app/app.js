@@ -41,7 +41,7 @@ $j(document).ready(function() {
 //});
 
 $j(document).ready(function() {
-  $j('#speciality th a').live("click", function() {
+  $j('#speciality th a, #speciality .pagination a').live("click", function() {
     $j.getScript(this.href);
     return false;
   });
@@ -52,6 +52,6 @@ $j(document).ready(function() {
   });
 });
 
-// $j(document).ready(function() {
-//    $j("#tabs").tabs();
-//  });
+ $j(document).ready(function() {
+    $j("#tabs").tabs();
+  });

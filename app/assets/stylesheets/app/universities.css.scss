@@ -1,5 +1,6 @@
 #uni-show{
   padding-top: 9px;
+  margin-bottom: 90px;
   #title{
     font-style: italic;
   }
@@ -189,6 +190,7 @@
       }
       #university-specialities{
         display: block;
+        width: 100%;
         a{
           display: block;
           text-decoration: none;
@@ -200,47 +202,47 @@
           color: #696060;
         }
       }
-      .kefir{
-       margin:40px; }
-      .kefir ul { background:#242424; padding:5px; float:left; }
-      .kefir li { 
-        list-style:none; 
-        /*Try deleting this float*/ 
-        float:left; 
-        }
-      .kefir a { 
-        display:block; 
-        background:#222; 
-        color:snow; 
-        padding:0 0px; 
-        font:bold 11pt Arial; 
-        text-decoration:none; 
-      }
-      .kefir a.selected { 
-        background:#FFF; 
-        color:#000; 
-      }
-      .items>div { 
-        display:none; 
-        float:left; 
-        margin:0.9em 0 0 0.5em; 
-      }
-      .kefir ul, .kefir a { 
-        border-radius:4px; 
-        -moz-border-radius:4px; 
-        -webkit-border-radius:4px;
-        -o-border-radius:4px;
-      }
-      #university-specialities{
-        display: block;
-        a{
-          display: block;
-          text-decoration: none;
-          font: normal 13px Arial;
-          background: #fafafa;
-          color: #222;
-        }
-        a:hover{
-          color: #696060;
-        }
-      }
+//      .kefir{
+//       margin:40px; }
+//      .kefir ul { background:#242424; padding:5px; float:left; }
+//      .kefir li { 
+//        list-style:none; 
+//        /*Try deleting this float*/ 
+//        float:left; 
+//        }
+//      .kefir a { 
+//        display:block; 
+//        background:#222; 
+//        color:snow; 
+//        padding:0 0px; 
+//        font:bold 11pt Arial; 
+//        text-decoration:none; 
+//      }
+//      .kefir a.selected { 
+//        background:#FFF; 
+//        color:#000; 
+//      }
+//      .items>div { 
+//        display:none; 
+//        float:left; 
+//        margin:0.9em 0 0 0.5em; 
+//      }
+//      .kefir ul, .kefir a { 
+//        border-radius:4px; 
+//        -moz-border-radius:4px; 
+//        -webkit-border-radius:4px;
+//        -o-border-radius:4px;
+//      }
+//      #university-specialities{
+//        display: block;
+//        a{
+//          display: block;
+//          text-decoration: none;
+//          font: normal 13px Arial;
+//          background: #fafafa;
+//          color: #222;
+//        }
+//        a:hover{
+//          color: #696060;
+//        }
+//      }

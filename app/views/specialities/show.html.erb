@@ -1,6 +1,8 @@
 <div id="speciality-show">
 <h1><%= @speciality.name %></h1>
-<%= @speciality.description %>
+<div id="speciality-desc">
+  <%= @speciality.description %>
+</div>
 <div id="list-universities-for-speciality">
 <% @university.each do |u|%>
   <div id="university-for-speciality">

@@ -52,6 +52,6 @@ $j(document).ready(function() {
   });
 });
 
- $j(document).ready(function() {
-    $j("#tabs").tabs();
-  });
+// $j(document).ready(function() {
+//    $j("#tabs").tabs();
+//  });

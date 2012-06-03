@@ -15,7 +15,7 @@ class SpecialitiesController < ApplicationController
   private
   
   def sort_column
-    Speciality.column_names.include?(params[:sort]) ? params[:sort] : "id"    
+    Speciality.column_names.include?(params[:sort]) ? params[:sort] : "name"    
   end
   
   def sort_direction

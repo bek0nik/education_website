@@ -1,6 +1,13 @@
 <%= form_tag(reports_path, :method => 'get')  do %>
-  <%= label_tag :period, "Период" %>
-  <%= select_tag :period, options_for_select(ApplicationHelper::PERIOD) %>
-  <%= label_tag :question, "Дисциплина" %>
+  <fieldset>
+  <div class="control-group">
+    <label class="control-label" for="period"><%= label_tag :period, "Период" %></label>
+    <div class="controls"><%= select_tag :period, options_for_select(ApplicationHelper::PERIOD) %></div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="discipline_test_name_id"><%= label_tag :disciplina, "Дисциплина" %></label>
+    <div class="controls"><%= collection_select(:discipline, :test_name_id, TestName.ascname, :id, :title) %></div>
+  </div> 
   <%= submit_tag "Построить диаграмму", :class => 'btn' %>
+  </fieldset>
 <% end %>

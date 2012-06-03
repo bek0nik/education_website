@@ -1,5 +1,9 @@
+#encoding:UTF-8
 class TestName < ActiveRecord::Base
   has_many :questions
+  def self.ascname
+    order('title ASC')    
+  end
 #  attr_writer :current_step
 #  def current_step
 #    @current_step ||= steps.first    

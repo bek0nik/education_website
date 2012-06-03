@@ -1,6 +1,7 @@
 #encoding:UTF-8
 class User < ActiveRecord::Base
   has_many :authentications
+  has_many :reports
   has_many :comments, :dependent => :destroy
   has_secure_password
   #rater

@@ -38,4 +38,8 @@ module ApplicationHelper
   
   #reports
   PERIOD = ["Неделя", "Месяц", "Полгода", "Год"]
+  
+  def to_date(object)
+    object.to_date
+  end
 end

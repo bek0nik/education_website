@@ -50,18 +50,17 @@
             <li class="img"><%=link_to image_tag('basecamp_32.png'), "#" %></li>
           </ul>
           
-          <div class="idTabs kefir">
+          
             <ul>
-              <li><a href="#4">Cсылки</a></li>
+            
               <li><a href="#5">Последнии комментарии</a></li>
             </ul>
-            <div class="items">
-              <div id="4"></div>
+            
+              
               <div id="5"><% @lastcom.each do |u| %>
                   <%= truncate(u.comment_text, length: 10) %> <br />
                 <% end %></div>
-            </div>
-          </div>
+           
           <div class="clr"></div>
         </div> 
         <!-- end sidebar -->

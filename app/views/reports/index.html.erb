@@ -11,3 +11,6 @@
   <%= submit_tag "Построить диаграмму", :class => 'btn' %>
   </fieldset>
 <% end %>
+<% @reports.each do |i| %>
+  <%= i.result %>
+<% end %>

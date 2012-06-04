@@ -28,6 +28,11 @@ class TestNamesController < ApplicationController
       end
       counter
     end
+#    if params[:end]
+#      Report.return_discipline(@question)
+#      Report.find_user(current_user)
+#      render 'reports/week'      
+#    end
 #    @question.each do |q| 
 #      if q.correct == params[:checked] #params[:correct] == true
 #        counter = counter + 1  

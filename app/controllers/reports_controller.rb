@@ -16,6 +16,7 @@ class ReportsController < ApplicationController
       Report.return_discipline(params[:discipline][:test_name_id])
       render 'year'            
     end
+    @reports = Report.all
   end
   
 end
